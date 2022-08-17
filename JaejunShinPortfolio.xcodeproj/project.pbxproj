@@ -24,6 +24,7 @@
 		52E2861828A8E39F00F2474C /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2861728A8E39F00F2474C /* ItemRowView.swift */; };
 		52E2861A28A8ED1300F2474C /* Binding-OnChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2861928A8ED1300F2474C /* Binding-OnChange.swift */; };
 		52E42E5328AC9D5D003EC564 /* Sequence-Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E42E5228AC9D5D003EC564 /* Sequence-Sorting.swift */; };
+		52E42E5528ACC223003EC564 /* SelectSomethingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E42E5428ACC223003EC564 /* SelectSomethingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		52E2861728A8E39F00F2474C /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
 		52E2861928A8ED1300F2474C /* Binding-OnChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding-OnChange.swift"; sourceTree = "<group>"; };
 		52E42E5228AC9D5D003EC564 /* Sequence-Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence-Sorting.swift"; sourceTree = "<group>"; };
+		52E42E5428ACC223003EC564 /* SelectSomethingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSomethingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				526E56C128A3A06900EC3F45 /* ContentView.swift */,
 				52D5549B28A3B685000C26A9 /* HomeView.swift */,
 				52D5549D28A3B6BC000C26A9 /* ProjectsView.swift */,
+				52E42E5428ACC223003EC564 /* SelectSomethingView.swift */,
 				52E2861728A8E39F00F2474C /* ItemRowView.swift */,
 				521188A228A9FF2400981F22 /* ProjectHeaderView.swift */,
 				52E2861528A8DD7D00F2474C /* EditItemView.swift */,
@@ -185,6 +188,7 @@
 				521188A728AA063100981F22 /* EditProjectVIew.swift in Sources */,
 				52817CF528A4DB5500833C81 /* Item-CoreDataHelper.swift in Sources */,
 				526E56D128A3A08200EC3F45 /* DataController.swift in Sources */,
+				52E42E5528ACC223003EC564 /* SelectSomethingView.swift in Sources */,
 				52E2861828A8E39F00F2474C /* ItemRowView.swift in Sources */,
 				526E56C228A3A06900EC3F45 /* ContentView.swift in Sources */,
 				52E2861A28A8ED1300F2474C /* Binding-OnChange.swift in Sources */,
