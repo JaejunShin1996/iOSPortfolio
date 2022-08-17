@@ -1,5 +1,5 @@
 //
-//  EditView.swift
+//  EditItemView.swift
 //  JaejunShinPortfolio
 //
 //  Created by Jaejun Shin on 14/8/2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EditView: View {
+struct EditItemView: View {
     @EnvironmentObject var dataController: DataController
     
     var item: Item
@@ -60,8 +60,8 @@ struct EditView: View {
     }
 }
 
-struct EditView_Previews: PreviewProvider {
+struct EditItemView_Previews: PreviewProvider {
     static var previews: some View {
-        EditView(item: Item.example)
+        EditItemView(item: Item.example)
     }
 }

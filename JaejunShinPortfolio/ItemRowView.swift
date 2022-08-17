@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct ItemRowView: View {
+    @ObservedObject var item: Item
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationLink(destination: EditItemView(item: item)) {
+            Text(item.itemTitle)
+        }
     }
 }
 
 struct ItemRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemRowView()
+        ItemRowView(item: Item.example)
     }
 }
