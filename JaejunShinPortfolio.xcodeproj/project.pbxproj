@@ -25,6 +25,10 @@
 		52E2861A28A8ED1300F2474C /* Binding-OnChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2861928A8ED1300F2474C /* Binding-OnChange.swift */; };
 		52E42E5328AC9D5D003EC564 /* Sequence-Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E42E5228AC9D5D003EC564 /* Sequence-Sorting.swift */; };
 		52E42E5528ACC223003EC564 /* SelectSomethingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E42E5428ACC223003EC564 /* SelectSomethingView.swift */; };
+		52E5B99B28AE1ACD005398F4 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 52E5B99A28AE1ACD005398F4 /* Awards.json */; };
+		52E5B99D28AE1AE3005398F4 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5B99C28AE1AE3005398F4 /* Bundle-Decodable.swift */; };
+		52E5B99F28AE1C37005398F4 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5B99E28AE1C37005398F4 /* Award.swift */; };
+		52E5B9A128AE1E98005398F4 /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5B9A028AE1E98005398F4 /* AwardsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		52E2861928A8ED1300F2474C /* Binding-OnChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding-OnChange.swift"; sourceTree = "<group>"; };
 		52E42E5228AC9D5D003EC564 /* Sequence-Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence-Sorting.swift"; sourceTree = "<group>"; };
 		52E42E5428ACC223003EC564 /* SelectSomethingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSomethingView.swift; sourceTree = "<group>"; };
+		52E5B99A28AE1ACD005398F4 /* Awards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Awards.json; sourceTree = "<group>"; };
+		52E5B99C28AE1AE3005398F4 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		52E5B99E28AE1C37005398F4 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
+		52E5B9A028AE1E98005398F4 /* AwardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,20 +89,9 @@
 			isa = PBXGroup;
 			children = (
 				526E56BF28A3A06900EC3F45 /* JaejunShinPortfolioApp.swift */,
-				526E56C128A3A06900EC3F45 /* ContentView.swift */,
-				52D5549B28A3B685000C26A9 /* HomeView.swift */,
-				52D5549D28A3B6BC000C26A9 /* ProjectsView.swift */,
-				52E42E5428ACC223003EC564 /* SelectSomethingView.swift */,
-				52E2861728A8E39F00F2474C /* ItemRowView.swift */,
-				521188A228A9FF2400981F22 /* ProjectHeaderView.swift */,
-				52E2861528A8DD7D00F2474C /* EditItemView.swift */,
-				521188A628AA063100981F22 /* EditProjectVIew.swift */,
-				526E56CD28A3A08200EC3F45 /* Main.xcdatamodeld */,
-				526E56CF28A3A08200EC3F45 /* DataController.swift */,
-				52817CF428A4DB5500833C81 /* Item-CoreDataHelper.swift */,
-				52817CF628A4DDAE00833C81 /* Project-CoreDataHelper.swift */,
-				52E2861928A8ED1300F2474C /* Binding-OnChange.swift */,
-				52E42E5228AC9D5D003EC564 /* Sequence-Sorting.swift */,
+				52E5B9A228AE2163005398F4 /* Views */,
+				52E5B9A328AE2183005398F4 /* Data */,
+				52E5B9A428AE21A9005398F4 /* Extension */,
 				526E56C328A3A06B00EC3F45 /* Assets.xcassets */,
 				521188A428AA030000981F22 /* Colors.xcassets */,
 				526E56D228A3A34D00EC3F45 /* Info.plist */,
@@ -109,6 +106,45 @@
 				526E56C628A3A06B00EC3F45 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		52E5B9A228AE2163005398F4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				52E42E5428ACC223003EC564 /* SelectSomethingView.swift */,
+				526E56C128A3A06900EC3F45 /* ContentView.swift */,
+				52D5549B28A3B685000C26A9 /* HomeView.swift */,
+				52D5549D28A3B6BC000C26A9 /* ProjectsView.swift */,
+				52E2861728A8E39F00F2474C /* ItemRowView.swift */,
+				521188A228A9FF2400981F22 /* ProjectHeaderView.swift */,
+				52E2861528A8DD7D00F2474C /* EditItemView.swift */,
+				521188A628AA063100981F22 /* EditProjectVIew.swift */,
+				52E5B9A028AE1E98005398F4 /* AwardsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		52E5B9A328AE2183005398F4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				526E56CD28A3A08200EC3F45 /* Main.xcdatamodeld */,
+				526E56CF28A3A08200EC3F45 /* DataController.swift */,
+				52817CF428A4DB5500833C81 /* Item-CoreDataHelper.swift */,
+				52817CF628A4DDAE00833C81 /* Project-CoreDataHelper.swift */,
+				52E5B99A28AE1ACD005398F4 /* Awards.json */,
+				52E5B99E28AE1C37005398F4 /* Award.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		52E5B9A428AE21A9005398F4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				52E2861928A8ED1300F2474C /* Binding-OnChange.swift */,
+				52E42E5228AC9D5D003EC564 /* Sequence-Sorting.swift */,
+				52E5B99C28AE1AE3005398F4 /* Bundle-Decodable.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				521188A528AA030000981F22 /* Colors.xcassets in Resources */,
+				52E5B99B28AE1ACD005398F4 /* Awards.json in Resources */,
 				526E56C728A3A06B00EC3F45 /* Preview Assets.xcassets in Resources */,
 				526E56C428A3A06B00EC3F45 /* Assets.xcassets in Resources */,
 			);
@@ -184,15 +221,18 @@
 			files = (
 				52D5549E28A3B6BC000C26A9 /* ProjectsView.swift in Sources */,
 				521188A328A9FF2400981F22 /* ProjectHeaderView.swift in Sources */,
+				52E5B9A128AE1E98005398F4 /* AwardsView.swift in Sources */,
 				526E56D028A3A08200EC3F45 /* Main.xcdatamodeld in Sources */,
 				521188A728AA063100981F22 /* EditProjectVIew.swift in Sources */,
 				52817CF528A4DB5500833C81 /* Item-CoreDataHelper.swift in Sources */,
 				526E56D128A3A08200EC3F45 /* DataController.swift in Sources */,
 				52E42E5528ACC223003EC564 /* SelectSomethingView.swift in Sources */,
+				52E5B99F28AE1C37005398F4 /* Award.swift in Sources */,
 				52E2861828A8E39F00F2474C /* ItemRowView.swift in Sources */,
 				526E56C228A3A06900EC3F45 /* ContentView.swift in Sources */,
 				52E2861A28A8ED1300F2474C /* Binding-OnChange.swift in Sources */,
 				52E42E5328AC9D5D003EC564 /* Sequence-Sorting.swift in Sources */,
+				52E5B99D28AE1AE3005398F4 /* Bundle-Decodable.swift in Sources */,
 				52E2861628A8DD7D00F2474C /* EditItemView.swift in Sources */,
 				52D5549C28A3B685000C26A9 /* HomeView.swift in Sources */,
 				52817CF728A4DDAE00833C81 /* Project-CoreDataHelper.swift in Sources */,

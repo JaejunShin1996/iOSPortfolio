@@ -27,7 +27,6 @@ struct ProjectsView: View {
     @State private var showingSortOrder = false
     @State private var sortOrder = Item.SortOrders.optimised
     
-    
     var body: some View {
         NavigationView {
             Group {
@@ -90,7 +89,7 @@ struct ProjectsView: View {
                     Button {
                         showingSortOrder.toggle()
                     } label: {
-                        Label("", systemImage: "arrow.up.arrow.down")
+                        Label("Sort", systemImage: "arrow.up.arrow.down")
                     }
                 }
             }
