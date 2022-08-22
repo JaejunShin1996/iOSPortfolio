@@ -29,12 +29,12 @@ extension Project {
     
     var projectItemsDefaultSorted: [Item] {
         projectItems.sorted { first, second in
-            if first.completion == false {
-                if second.completion == true {
+            if first.completed == false {
+                if second.completed == true {
                     return true
                 }
-            } else if first.completion == true {
-                if second.completion == false {
+            } else if first.completed == true {
+                if second.completed == false {
                     return false
                 }
             }
@@ -49,11 +49,22 @@ extension Project {
         }
     }
     
+    func projectItems(using sortOrder: Item.SortOrders) -> [Item] {
+        switch sortOrder {
+        case .optimised:
+            return projectItemsDefaultSorted
+        case .creationDate:
+            return projectItems.sorted(by: \Item.itemCreationDate)
+        case .title:
+            return projectItems.sorted(by: \Item.itemTitle)
+        }
+    }
+    
     var completionAmount: Double {
         let originalItems = items?.allObjects as? [Item] ?? []
         guard originalItems.isEmpty == false else { return 0 }
         
-        let completedItems = originalItems.filter(\.completion)
+        let completedItems = originalItems.filter(\.completed)
         return Double(completedItems.count) / Double(originalItems.count)
     }
     
@@ -68,16 +79,5 @@ extension Project {
         project.closed = true
         
         return project
-    }
-    
-    func projectItems(using sortOrder: Item.SortOrders) -> [Item] {
-        switch sortOrder {
-        case .optimised:
-            return projectItemsDefaultSorted
-        case .creationDate:
-            return projectItems.sorted(by: \Item.itemCreationDate)
-        case .title:
-            return projectItems.sorted(by: \Item.itemTitle)
-        }
     }
 }

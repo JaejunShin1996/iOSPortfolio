@@ -15,7 +15,7 @@ struct EditItemView: View {
     @State private var title: String
     @State private var detail: String
     @State private var priority: Int
-    @State private var completion: Bool
+    @State private var completed: Bool
     
     init(item: Item) {
         self.item = item
@@ -23,7 +23,7 @@ struct EditItemView: View {
         _title = State(wrappedValue: item.itemTitle)
         _detail = State(wrappedValue: item.itemDetail)
         _priority = State(wrappedValue: Int(item.priority))
-        _completion = State(wrappedValue: item.completion)
+        _completed = State(wrappedValue: item.completed)
     }
     
     var body: some View {
@@ -43,7 +43,7 @@ struct EditItemView: View {
             }
             
             Section {
-                Toggle("Completed", isOn: $completion.onChange(update))
+                Toggle("Completed", isOn: $completed.onChange(update))
             }
         }
         .navigationTitle("Edit View")
@@ -56,7 +56,7 @@ struct EditItemView: View {
         item.title = title
         item.detail = detail
         item.priority = Int16(priority)
-        item.completion = completion
+        item.completed = completed
     }
 }
 
