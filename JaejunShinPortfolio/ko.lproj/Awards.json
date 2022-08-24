@@ -1,15 +1,15 @@
 [
     {
         "name": "첫 걸음",
-        "description": "아이템 하나 생성하세요",
+        "description": "아이템 하나 생성",
         "color": "Light Blue",
         "criterion": "items",
         "value": 1,
         "image": "figure.walk"
     },
     {
-        "name": "A Great Start",
-        "description": "Add 10 item.",
+        "name": "좋은 시작",
+        "description": "아이템 10개 생성",
         "color": "Light Blue",
         "criterion": "items",
         "value": 10,
