@@ -5,6 +5,7 @@
 //  Created by Jaejun Shin on 15/8/2022.
 //
 
+import CoreData
 import SwiftUI
 
 struct EditProjectVIew: View {
@@ -12,6 +13,7 @@ struct EditProjectVIew: View {
     @Environment(\.presentationMode) var presentationMode
     
     let project: Project
+    
     
     @State private var title: String
     @State private var detail: String
