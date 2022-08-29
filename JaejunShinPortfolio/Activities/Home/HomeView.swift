@@ -20,7 +20,7 @@ struct HomeView: View {
     ) var projects: FetchedResults<Project>
 
     let items: FetchRequest<Item>
-
+// Construct this fetch request to show 10 high priority and incomplete items from open projects.
     init() {
         let request: NSFetchRequest<Item> = Item.fetchRequest()
 

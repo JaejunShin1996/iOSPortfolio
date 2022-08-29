@@ -11,6 +11,9 @@ import SwiftUI
 class DataController: ObservableObject {
     let container: NSPersistentCloudKitContainer
 
+    // For testing and previewing purposes, we create a
+    // temporary, in-memory database by writing to /dev/null
+    // so our data is destroyed after the app finishes running.
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "Main")
         if inMemory {
@@ -52,14 +55,17 @@ class DataController: ObservableObject {
         }
         try viewContext.save()
     }
+
     func save() {
         if container.viewContext.hasChanges {
             try? container.viewContext.save()
         }
     }
+
     func delete(_ object: NSManagedObject) {
         container.viewContext.delete(object)
     }
+
     func deleteAll() {
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = Item.fetchRequest()
         let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
@@ -68,22 +74,25 @@ class DataController: ObservableObject {
         let batchDeleteRequest2 = NSBatchDeleteRequest(fetchRequest: fetchRequest2)
         _ = try? container.viewContext.execute(batchDeleteRequest2)
     }
+
     func count<T>(for fetchRequest: NSFetchRequest<T>) -> Int {
         (try? container.viewContext.count(for: fetchRequest)) ?? 0
     }
+
     func hasEarned(award: Award) -> Bool {
         switch award.criterion {
+// returns true if they added a certain number of items
         case "items":
             let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
             let awardCount = count(for: fetchRequest)
             return awardCount >= award.value
-
+// returns true if they completed a certain number of items
         case "complete":
             let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
             fetchRequest.predicate = NSPredicate(format: "completed = true")
             let awardCount = count(for: fetchRequest)
             return awardCount >= award.value
-
+// a unknown award; this should not be allowed
         default:
             // fatalError("Unknown award criterion \(award.criterion).")
             return false

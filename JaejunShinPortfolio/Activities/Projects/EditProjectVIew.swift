@@ -19,10 +19,6 @@ struct EditProjectVIew: View {
     @State private var color: String
     @State private var showingDeleteConfirm = false
 
-    let colorColumns = [
-        GridItem(.adaptive(minimum: 44))
-    ]
-
     init(project: Project) {
         self.project = project
 
@@ -30,6 +26,10 @@ struct EditProjectVIew: View {
         _detail = State(wrappedValue: project.projectDetail)
         _color = State(wrappedValue: project.projectColor)
     }
+
+    let colorColumns = [
+        GridItem(.adaptive(minimum: 44))
+    ]
 
     var body: some View {
         Form {

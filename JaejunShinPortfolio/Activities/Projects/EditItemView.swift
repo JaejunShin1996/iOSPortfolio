@@ -10,15 +10,16 @@ import SwiftUI
 struct EditItemView: View {
     @EnvironmentObject var dataController: DataController
 
+    var item: Item
+
     @State private var title: String
     @State private var detail: String
     @State private var priority: Int
     @State private var completed: Bool
 
-    var item: Item
-
     init(item: Item) {
         self.item = item
+
         _title = State(wrappedValue: item.itemTitle)
         _detail = State(wrappedValue: item.itemDetail)
         _priority = State(wrappedValue: Int(item.priority))

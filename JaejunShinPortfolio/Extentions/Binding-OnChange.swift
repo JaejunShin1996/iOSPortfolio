@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// This extension helps update data as soon as users change values.
 extension Binding {
     func onChange(_ handler: @escaping () -> Void) -> Binding<Value> {
         Binding(

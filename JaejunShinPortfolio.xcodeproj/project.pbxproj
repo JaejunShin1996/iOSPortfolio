@@ -50,7 +50,7 @@
 		526E56C628A3A06B00EC3F45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		526E56CE28A3A08200EC3F45 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		526E56CF28A3A08200EC3F45 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		526E56D228A3A34D00EC3F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		526E56D228A3A34D00EC3F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52817CF428A4DB5500833C81 /* Item-CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item-CoreDataHelper.swift"; sourceTree = "<group>"; };
 		52817CF628A4DDAE00833C81 /* Project-CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project-CoreDataHelper.swift"; sourceTree = "<group>"; };
 		52D5549B28A3B685000C26A9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -82,6 +82,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5201825428BC6BFF004C667E /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				526E56D228A3A34D00EC3F45 /* Info.plist */,
+				526E56CD28A3A08200EC3F45 /* Main.xcdatamodeld */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		5201825528BC6C02004C667E /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				52F4F57E28B4A6F700D95D92 /* Localizable.stringsdict */,
+				52F4F57A28B4A6ED00D95D92 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		5201825628BC6C06004C667E /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				52817CF428A4DB5500833C81 /* Item-CoreDataHelper.swift */,
+				52817CF628A4DDAE00833C81 /* Project-CoreDataHelper.swift */,
+				52E2861928A8ED1300F2474C /* Binding-OnChange.swift */,
+				52E42E5228AC9D5D003EC564 /* Sequence-Sorting.swift */,
+				52E5B99C28AE1AE3005398F4 /* Bundle-Decodable.swift */,
+				5251162D28AF7E6D000E4E26 /* Color-Additions.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		5201825728BC6CC1004C667E /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				5201825A28BC6CD0004C667E /* Home */,
+				5201825928BC6CCE004C667E /* Projects */,
+				5201825828BC6CCC004C667E /* Awards */,
+			);
+			path = Activities;
+			sourceTree = "<group>";
+		};
+		5201825828BC6CCC004C667E /* Awards */ = {
+			isa = PBXGroup;
+			children = (
+				52E5B9A028AE1E98005398F4 /* AwardsView.swift */,
+				52E5B99E28AE1C37005398F4 /* Award.swift */,
+				52F4F58228B4AA8900D95D92 /* Awards.json */,
+			);
+			path = Awards;
+			sourceTree = "<group>";
+		};
+		5201825928BC6CCE004C667E /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				52D5549D28A3B6BC000C26A9 /* ProjectsView.swift */,
+				52E42E5428ACC223003EC564 /* SelectSomethingView.swift */,
+				521188A228A9FF2400981F22 /* ProjectHeaderView.swift */,
+				521188A628AA063100981F22 /* EditProjectVIew.swift */,
+				52E2861728A8E39F00F2474C /* ItemRowView.swift */,
+				52E2861528A8DD7D00F2474C /* EditItemView.swift */,
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
+		5201825A28BC6CD0004C667E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				52D5549B28A3B685000C26A9 /* HomeView.swift */,
+				525BC8D728B72B950022E661 /* ProjectSummaryView.swift */,
+				525BC8D528B729AA0022E661 /* ItemListView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		526E56B328A3A06900EC3F45 = {
 			isa = PBXGroup;
 			children = (
@@ -101,33 +175,15 @@
 		526E56BE28A3A06900EC3F45 /* JaejunShinPortfolio */ = {
 			isa = PBXGroup;
 			children = (
+				5201825728BC6CC1004C667E /* Activities */,
+				5201825628BC6C06004C667E /* Extentions */,
+				5201825528BC6C02004C667E /* Localization */,
+				5201825428BC6BFF004C667E /* Configuration */,
 				526E56BF28A3A06900EC3F45 /* JaejunShinPortfolioApp.swift */,
-				52E42E5428ACC223003EC564 /* SelectSomethingView.swift */,
 				526E56C128A3A06900EC3F45 /* ContentView.swift */,
-				52D5549B28A3B685000C26A9 /* HomeView.swift */,
-				525BC8D728B72B950022E661 /* ProjectSummaryView.swift */,
-				525BC8D528B729AA0022E661 /* ItemListView.swift */,
-				52D5549D28A3B6BC000C26A9 /* ProjectsView.swift */,
-				521188A228A9FF2400981F22 /* ProjectHeaderView.swift */,
-				521188A628AA063100981F22 /* EditProjectVIew.swift */,
-				52E2861728A8E39F00F2474C /* ItemRowView.swift */,
-				52E2861528A8DD7D00F2474C /* EditItemView.swift */,
-				52E5B9A028AE1E98005398F4 /* AwardsView.swift */,
-				52817CF428A4DB5500833C81 /* Item-CoreDataHelper.swift */,
-				52817CF628A4DDAE00833C81 /* Project-CoreDataHelper.swift */,
-				52E2861928A8ED1300F2474C /* Binding-OnChange.swift */,
-				52E42E5228AC9D5D003EC564 /* Sequence-Sorting.swift */,
-				52E5B99C28AE1AE3005398F4 /* Bundle-Decodable.swift */,
-				5251162D28AF7E6D000E4E26 /* Color-Additions.swift */,
-				52E5B99E28AE1C37005398F4 /* Award.swift */,
-				526E56CD28A3A08200EC3F45 /* Main.xcdatamodeld */,
 				526E56CF28A3A08200EC3F45 /* DataController.swift */,
-				52F4F58228B4AA8900D95D92 /* Awards.json */,
-				52F4F57A28B4A6ED00D95D92 /* Localizable.strings */,
-				52F4F57E28B4A6F700D95D92 /* Localizable.stringsdict */,
 				526E56C328A3A06B00EC3F45 /* Assets.xcassets */,
 				521188A428AA030000981F22 /* Colors.xcassets */,
-				526E56D228A3A34D00EC3F45 /* Info.plist */,
 				526E56C528A3A06B00EC3F45 /* Preview Content */,
 			);
 			path = JaejunShinPortfolio;
@@ -420,7 +476,7 @@
 				DEVELOPMENT_TEAM = YZ2HTNTHQP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = JaejunShinPortfolio/Info.plist;
+				INFOPLIST_FILE = JaejunShinPortfolio/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -450,7 +506,7 @@
 				DEVELOPMENT_TEAM = YZ2HTNTHQP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = JaejunShinPortfolio/Info.plist;
+				INFOPLIST_FILE = JaejunShinPortfolio/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

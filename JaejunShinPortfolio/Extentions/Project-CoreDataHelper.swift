@@ -39,7 +39,7 @@ extension Project {
     var projectItems: [Item] {
         items?.allObjects as? [Item] ?? []
     }
-
+// Sort incomplete, priority and creation date. Incomplete, high priority and last made comes first.
     var projectItemsDefaultSorted: [Item] {
         projectItems.sorted { first, second in
             if first.completed == false {
