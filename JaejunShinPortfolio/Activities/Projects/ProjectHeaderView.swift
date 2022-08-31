@@ -21,7 +21,7 @@ struct ProjectHeaderView: View {
 
             Spacer()
 
-            NavigationLink(destination: EditProjectVIew(project: project)) {
+            NavigationLink(destination: EditProjectView(project: project)) {
                 Image(systemName: "square.and.pencil")
             }
         }

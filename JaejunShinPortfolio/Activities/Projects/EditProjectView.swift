@@ -8,7 +8,7 @@
 import CoreData
 import SwiftUI
 
-struct EditProjectVIew: View {
+struct EditProjectView: View {
     @EnvironmentObject var dataController: DataController
     @Environment(\.presentationMode) var presentationMode
 
@@ -107,6 +107,6 @@ struct EditProjectVIew: View {
 
 struct EditProjectVIew_Previews: PreviewProvider {
     static var previews: some View {
-        EditProjectVIew(project: Project.example)
+        EditProjectView(project: Project.example)
     }
 }
