@@ -15,10 +15,12 @@ class DataController: ObservableObject {
     // temporary, in-memory database by writing to /dev/null
     // so our data is destroyed after the app finishes running.
     init(inMemory: Bool = false) {
-        container = NSPersistentCloudKitContainer(name: "Main")
+        container = NSPersistentCloudKitContainer(name: "Main", managedObjectModel: Self.model)
+
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
         }
+
         container.loadPersistentStores { _, error in
             if let error = error {
                 fatalError("Fatal error loading stroe: \(error.localizedDescription)")
@@ -28,22 +30,38 @@ class DataController: ObservableObject {
 
     static let preview: DataController = {
         let dataController = DataController(inMemory: true)
+
         do {
             try dataController.createSampleData()
         } catch {
             fatalError("fatal error loading preview, \(error.localizedDescription)")
         }
+
         return dataController
+    }()
+
+    static let model: NSManagedObjectModel = {
+        guard let url = Bundle.main.url(forResource: "Main", withExtension: "momd") else {
+            fatalError("Failed to locate model file.")
+        }
+
+        guard let managedObjectModel = NSManagedObjectModel(contentsOf: url) else {
+            fatalError("Failed to load model file.")
+        }
+
+        return managedObjectModel
     }()
 
     func createSampleData() throws {
         let viewContext = container.viewContext
+
         for projectCounter in 1...5 {
             let project = Project(context: viewContext)
             project.title = "Project \(projectCounter)"
             project.items = []
             project.creationDate = Date()
             project.closed = Bool.random()
+
             for itemCounter in 1...10 {
                 let item = Item(context: viewContext)
                 item.title = "Item \(itemCounter)"
