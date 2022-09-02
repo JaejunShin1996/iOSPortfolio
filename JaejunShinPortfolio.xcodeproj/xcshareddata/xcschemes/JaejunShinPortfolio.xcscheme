@@ -27,6 +27,8 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
+      language = "en"
+      region = "AU"
       codeCoverageEnabled = "YES"
       onlyGenerateCoverageForSpecifiedTargets = "YES">
       <CodeCoverageTargets>
@@ -46,6 +48,16 @@
                BlueprintIdentifier = "5201825E28BC861F004C667E"
                BuildableName = "JaejunShinPortfolioTests.xctest"
                BlueprintName = "JaejunShinPortfolioTests"
+               ReferencedContainer = "container:JaejunShinPortfolio.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5220040428C070D100B932B4"
+               BuildableName = "JaejunShinPortfolioUITests.xctest"
+               BlueprintName = "JaejunShinPortfolioUITests"
                ReferencedContainer = "container:JaejunShinPortfolio.xcodeproj">
             </BuildableReference>
          </TestableReference>
