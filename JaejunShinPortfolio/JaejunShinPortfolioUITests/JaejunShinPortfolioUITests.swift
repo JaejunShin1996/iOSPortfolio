@@ -51,8 +51,8 @@ class JaejunShinPortfolioUITests: XCTestCase {
         XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 project.")
 
         app.buttons["Compose"].tap()
-        app.textFields["Project name"].tap()
 
+        app.textFields["Project name"].tap()
         app.keys["space"].tap()
         app.keys["more"].tap()
         app.keys["2"].tap()
@@ -80,12 +80,59 @@ class JaejunShinPortfolioUITests: XCTestCase {
 
     func testAllAwardsLockedAlert() {
         app.buttons["Awards"].tap()
-                  
+
         for award in app.scrollViews.buttons.allElementsBoundByIndex {
             award.tap()
 
             XCTAssertTrue(app.alerts["Locked"].exists, "The alert should show Locked")
             app.buttons["OK"].tap()
         }
+    }
+
+    func testOpenCloseProjectsMovesToEachTab() {
+        app.buttons["Open"].tap()
+        XCTAssertEqual(app.tables.cells.count, 0, "There should be no items initially.")
+
+        app.buttons["Add Project"].tap()
+        XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 project.")
+
+        app.buttons["Compose"].tap()
+
+        app.buttons["Close this Project"].tap()
+
+        app.buttons["Closed"].tap()
+
+        XCTAssertTrue(app.staticTexts["New Project"].exists, "There should be New Project")
+    }
+
+    func testUnlockingAwardsAlert() {
+        // Goes to open project and add a project and an item before the test.
+        testInsertingItemIntoProject()
+        app.buttons["Awards"].tap()
+
+        var count = 0
+
+        for award in app.scrollViews.buttons.allElementsBoundByIndex {
+            award.tap()
+
+            if count == 0 {
+                count += 1
+                XCTAssertFalse(app.alerts["Locked"].exists, "The alert should show unlocked something")
+                app.buttons["OK"].tap()
+            } else {
+                XCTAssertTrue(app.alerts["Locked"].exists, "The alert should show Locked")
+                app.buttons["OK"].tap()
+            }
+        }
+    }
+
+    func testSwipeToDeleteItems() {
+        // Goes to open project and add a project and an item before the test.
+        testInsertingItemIntoProject()
+
+        app.buttons["New Item"].swipeLeft()
+        app.buttons["Delete"].tap()
+
+        XCTAssertEqual(app.tables.cells.count, 1, "Cells count should be 1 which is one project.")
     }
 }
