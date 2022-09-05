@@ -11,10 +11,8 @@ import SwiftUI
 
 extension ProjectsView {
     class ViewModel: NSObject, ObservableObject, NSFetchedResultsControllerDelegate {
-        @State var sortOrder = Item.SortOrders.optimised
-
-        let showClosedProjects: Bool
         let dataController: DataController
+        let showClosedProjects: Bool
 
         private let projectsController: NSFetchedResultsController<Project>
         @Published var projects = [Project]()
@@ -24,8 +22,8 @@ extension ProjectsView {
             self.showClosedProjects = showClosedProjects
 
             let request: NSFetchRequest<Project> = Project.fetchRequest()
-            request.sortDescriptors = [NSSortDescriptor(keyPath: \Project.creationDate, ascending: false)]
             request.predicate = NSPredicate(format: "closed = %d", showClosedProjects)
+            request.sortDescriptors = [NSSortDescriptor(keyPath: \Project.creationDate, ascending: false)]
 
             projectsController = NSFetchedResultsController(
                 fetchRequest: request,
@@ -44,6 +42,8 @@ extension ProjectsView {
                 print("Failed to load the projects")
             }
         }
+
+        @State var sortOrder = Item.SortOrders.optimised
 
         func onDelete(_ offsets: IndexSet, from project: Project) {
             let allItems = project.projectItems(using: sortOrder)
@@ -74,6 +74,5 @@ extension ProjectsView {
                 projects = newProjects
             }
          }
-
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ItemListView: View {
     var title: LocalizedStringKey
-    var items: FetchedResults<Item>.SubSequence
+    var items: ArraySlice<Item>
 
     var body: some View {
         if items.isEmpty {

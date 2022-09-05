@@ -9,31 +9,12 @@ import CoreData
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var dataController: DataController
-
     static let tag: String? = "Home"
+    @StateObject var viewModel: ViewModel
 
-    @FetchRequest(
-        entity: Project.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \Project.title, ascending: true)],
-        predicate: NSPredicate(format: "closed = false")
-    ) var projects: FetchedResults<Project>
-
-    let items: FetchRequest<Item>
-// Construct this fetch request to show 10 high priority and incomplete items from open projects.
-    init() {
-        let request: NSFetchRequest<Item> = Item.fetchRequest()
-
-        let completedPredicate = NSPredicate(format: "completed = false")
-        let openPredicate = NSPredicate(format: "project.closed = false")
-        let compoundPredicate = NSCompoundPredicate(type: .and, subpredicates: [completedPredicate, openPredicate])
-
-        request.predicate = compoundPredicate
-
-        request.sortDescriptors = [NSSortDescriptor(keyPath: \Item.priority, ascending: false)]
-        request.fetchLimit = 10
-
-        items = FetchRequest(fetchRequest: request)
+    init(dataController: DataController) {
+        let viewModel = ViewModel(dataController: dataController)
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
 
     var projectsRows: [GridItem] {
@@ -46,15 +27,15 @@ struct HomeView: View {
                 VStack(alignment: .leading) {
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHGrid(rows: projectsRows) {
-                            ForEach(projects, content: ProjectSummaryView.init)
+                            ForEach(viewModel.projects, content: ProjectSummaryView.init)
                         }
                         .padding([.horizontal, .top])
                         .fixedSize(horizontal: false, vertical: true)
                     }
 
                     VStack(alignment: .leading) {
-                        ItemListView(title: "Up next", items: items.wrappedValue.prefix(3))
-                        ItemListView(title: "More to explore", items: items.wrappedValue.dropFirst(3))
+                        ItemListView(title: "Up next", items: viewModel.upNext)
+                        ItemListView(title: "More to explore", items: viewModel.moreToExplore)
                     }
                     .padding(.horizontal)
                 }
@@ -62,10 +43,7 @@ struct HomeView: View {
             .background(Color.systemGroupedBackground.ignoresSafeArea())
             .navigationTitle("Home")
             .toolbar {
-                Button("Add Data") {
-                    dataController.deleteAll()
-                    try? dataController.createSampleData()
-                }
+                Button("Add Data", action: viewModel.addSampleData)
             }
         }
     }
@@ -73,6 +51,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(dataController: .preview)
     }
 }
