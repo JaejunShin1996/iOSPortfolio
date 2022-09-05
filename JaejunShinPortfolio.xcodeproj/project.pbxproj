@@ -12,6 +12,7 @@
 		521188A328A9FF2400981F22 /* ProjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521188A228A9FF2400981F22 /* ProjectHeaderView.swift */; };
 		521188A528AA030000981F22 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521188A428AA030000981F22 /* Colors.xcassets */; };
 		521188A728AA063100981F22 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521188A628AA063100981F22 /* EditProjectView.swift */; };
+		521758BD28C3205A005B526D /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521758BC28C3205A005B526D /* ProjectsViewModel.swift */; };
 		5220040028C066A100B932B4 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522003FF28C066A100B932B4 /* PerformanceTests.swift */; };
 		5220040828C070D100B932B4 /* JaejunShinPortfolioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5220040728C070D100B932B4 /* JaejunShinPortfolioUITests.swift */; };
 		5220040A28C070D100B932B4 /* JaejunShinPortfolioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5220040928C070D100B932B4 /* JaejunShinPortfolioUITestsLaunchTests.swift */; };
@@ -71,6 +72,7 @@
 		521188A228A9FF2400981F22 /* ProjectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHeaderView.swift; sourceTree = "<group>"; };
 		521188A428AA030000981F22 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		521188A628AA063100981F22 /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
+		521758BC28C3205A005B526D /* ProjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewModel.swift; sourceTree = "<group>"; };
 		522003FF28C066A100B932B4 /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
 		5220040528C070D100B932B4 /* JaejunShinPortfolioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JaejunShinPortfolioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5220040728C070D100B932B4 /* JaejunShinPortfolioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JaejunShinPortfolioUITests.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				52D5549D28A3B6BC000C26A9 /* ProjectsView.swift */,
+				521758BC28C3205A005B526D /* ProjectsViewModel.swift */,
 				52E42E5428ACC223003EC564 /* SelectSomethingView.swift */,
 				521188A228A9FF2400981F22 /* ProjectHeaderView.swift */,
 				521188A628AA063100981F22 /* EditProjectView.swift */,
@@ -491,6 +494,7 @@
 				52E2861628A8DD7D00F2474C /* EditItemView.swift in Sources */,
 				52D5549C28A3B685000C26A9 /* HomeView.swift in Sources */,
 				52817CF728A4DDAE00833C81 /* Project-CoreDataHelper.swift in Sources */,
+				521758BD28C3205A005B526D /* ProjectsViewModel.swift in Sources */,
 				526E56C028A3A06900EC3F45 /* JaejunShinPortfolioApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
