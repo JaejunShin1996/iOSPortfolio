@@ -10,7 +10,7 @@ import SwiftUI
 struct EditItemView: View {
     @EnvironmentObject var dataController: DataController
 
-    var item: Item
+    @ObservedObject var item: Item
 
     @State private var title: String
     @State private var detail: String

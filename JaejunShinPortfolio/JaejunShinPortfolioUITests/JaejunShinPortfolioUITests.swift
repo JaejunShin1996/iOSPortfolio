@@ -50,7 +50,7 @@ class JaejunShinPortfolioUITests: XCTestCase {
         app.buttons["Add Project"].tap()
         XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 project.")
 
-        app.buttons["Compose"].tap()
+        app.buttons["Edit Project"].tap()
 
         app.textFields["Project name"].tap()
         app.keys["space"].tap()
@@ -96,7 +96,7 @@ class JaejunShinPortfolioUITests: XCTestCase {
         app.buttons["Add Project"].tap()
         XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 project.")
 
-        app.buttons["Compose"].tap()
+        app.buttons["Edit Project"].tap()
 
         app.buttons["Close this Project"].tap()
 

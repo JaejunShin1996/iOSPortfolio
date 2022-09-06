@@ -39,7 +39,7 @@ struct ProjectsView: View {
                                 viewModel.addItem(to: project)
                             }
                         } label: {
-                            Label("Add Item", systemImage: "plus")
+                            Label("Add New Item", systemImage: "plus")
                         }
                     }
                 }
