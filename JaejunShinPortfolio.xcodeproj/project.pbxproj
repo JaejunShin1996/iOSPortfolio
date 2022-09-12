@@ -93,6 +93,7 @@
 		526E56D228A3A34D00EC3F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52764F9F28CEFAAE00A00B42 /* JaejunShinPortfolio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JaejunShinPortfolio.entitlements; sourceTree = "<group>"; };
 		52764FA028CEFDC900A00B42 /* UnlockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockManager.swift; sourceTree = SOURCE_ROOT; };
+		52764FA228CF032F00A00B42 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		52817CF428A4DB5500833C81 /* Item-CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item-CoreDataHelper.swift"; sourceTree = "<group>"; };
 		52817CF628A4DDAE00833C81 /* Project-CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project-CoreDataHelper.swift"; sourceTree = "<group>"; };
 		52ADC78B28BF275F002BA3F3 /* ExtentionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionTests.swift; sourceTree = "<group>"; };
@@ -266,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				52764FA028CEFDC900A00B42 /* UnlockManager.swift */,
+				52764FA228CF032F00A00B42 /* Configuration.storekit */,
 				52764F9F28CEFAAE00A00B42 /* JaejunShinPortfolio.entitlements */,
 				5201825728BC6CC1004C667E /* Activities */,
 				5201825628BC6C06004C667E /* Extentions */,

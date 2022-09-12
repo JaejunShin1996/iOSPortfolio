@@ -16,7 +16,24 @@ class DataController: ObservableObject {
     // For testing and previewing purposes, we create a
     // temporary, in-memory database by writing to /dev/null
     // so our data is destroyed after the app finishes running.
-    init(inMemory: Bool = false) {
+
+    // The UserDefault suite where we are saving the data
+    let defaults: UserDefaults
+
+    // Loads and saves whether our premium unlock has been purchased
+    var fullVersionUnlocked: Bool {
+        get {
+            defaults.bool(forKey: "fullVersionUnlocked")
+        }
+
+        set {
+            defaults.set(newValue, forKey: "fullVersionUnlocked")
+        }
+    }
+
+    init(inMemory: Bool = false, defaults: UserDefaults = .standard) {
+        self.defaults = defaults
+
         container = NSPersistentCloudKitContainer(name: "Main", managedObjectModel: Self.model)
 
         if inMemory {
