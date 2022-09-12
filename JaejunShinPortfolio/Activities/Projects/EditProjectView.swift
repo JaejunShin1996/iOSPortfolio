@@ -9,15 +9,20 @@ import CoreHaptics
 import SwiftUI
 
 struct EditProjectView: View {
-    @ObservedObject var project: Project
-
     @EnvironmentObject var dataController: DataController
     @Environment(\.presentationMode) var presentationMode
+
+    @ObservedObject var project: Project
 
     @State private var title: String
     @State private var detail: String
     @State private var color: String
+
+    @State private var remiderTime: Date
+    @State private var remiderMe: Bool
+
     @State private var showingDeleteConfirm = false
+    @State private var showingNotificationError = false
 
     @State private var engine = try? CHHapticEngine()
 
@@ -27,6 +32,14 @@ struct EditProjectView: View {
         _title = State(wrappedValue: project.projectTitle)
         _detail = State(wrappedValue: project.projectDetail)
         _color = State(wrappedValue: project.projectColor)
+
+        if let projectRemiderTime = project.remiderTime {
+            _remiderTime = State(wrappedValue: projectRemiderTime)
+            _remiderMe = State(wrappedValue: true)
+        } else {
+            _remiderTime = State(wrappedValue: Date())
+            _remiderMe = State(wrappedValue: false)
+        }
     }
 
     let colorColumns = [
@@ -35,19 +48,45 @@ struct EditProjectView: View {
 
     var body: some View {
         Form {
-            Section(header: Text("Basic Settings")) {
-                TextField("Project name", text: $title.onChange(update))
-                TextField("Description of this project", text: $detail.onChange(update))
+            Section {
+                TextField("Project name", text: $title)
+                TextField("Description of this project", text: $detail)
+            } header: {
+                Text("Basic Settings")
             }
 
-            Section(header: Text("Custom project color")) {
+            Section {
                 LazyVGrid(columns: colorColumns) {
                     ForEach(Project.colors, id: \.self, content: colorButton)
                 }
                 .padding(.vertical)
+            } header: {
+                Text("Custom project color")
             }
-            // swiftlint:disable:next line_length
-            Section(footer: Text("Closing a project moves it from the Open to Closed tab; deleting it removes the project completely.")) {
+
+            Section {
+                Toggle("Show reminders", isOn: $remiderMe.animation().onChange(update))
+                    .alert(isPresented: $showingNotificationError) {
+                        Alert(
+                            title: Text("Oops"),
+                            message: Text("There is a problem, please check you have notification enabled"),
+                            primaryButton: .default(Text("Check settings"), action: showAppSettings),
+                            secondaryButton: .cancel()
+                        )
+                    }
+
+                if remiderMe {
+                    DatePicker(
+                        "Reminder time",
+                        selection: $remiderTime.onChange(update),
+                        displayedComponents: .hourAndMinute
+                    )
+                }
+            } header: {
+                Text("Project remiders")
+            }
+
+            Section {
                 Button(project.closed ? "Reopen this project" : "Close this project") {
                     closedToggle()
                 }
@@ -56,15 +95,20 @@ struct EditProjectView: View {
                     showingDeleteConfirm.toggle()
                 }
                 .accentColor(.red)
+            } footer: {
+                // swiftlint:disable:next line_length
+                Text("Closing a project moves it from the Open to Closed tab; deleting it removes the project completely.")
             }
+
         }
         .navigationTitle("Edit View")
         .onDisappear(perform: dataController.save)
         .alert(isPresented: $showingDeleteConfirm) {
             Alert(
                 title: Text("Delete project?"),
-                message: Text("Are you sure you want to delete this project? "),
-                primaryButton: .default(Text("Delete"), action: delete),
+                // swiftlint:disable:next line_length
+                message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."),
+                primaryButton: .destructive(Text("Delete"), action: delete),
                 secondaryButton: .cancel()
             )
         }
@@ -74,6 +118,21 @@ struct EditProjectView: View {
         project.title = title
         project.detail = detail
         project.color = color
+
+        if remiderMe {
+            project.remiderTime = remiderTime
+
+            dataController.addReminders(for: project) { success in
+                if success == false {
+                    project.remiderTime = nil
+                    remiderMe = false
+                    showingNotificationError = true
+                }
+            }
+        } else {
+            project.remiderTime = nil
+            dataController.removeReminders(for: project)
+        }
     }
 
     func delete() {
@@ -145,6 +204,16 @@ struct EditProjectView: View {
             [.isButton, .isSelected] : [.isButton]
         )
         .accessibilityLabel(LocalizedStringKey(item))
+    }
+
+    func showAppSettings() {
+        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+            return
+        }
+
+        if UIApplication.shared.canOpenURL(settingsUrl) {
+            UIApplication.shared.open(settingsUrl)
+        }
     }
 }
 

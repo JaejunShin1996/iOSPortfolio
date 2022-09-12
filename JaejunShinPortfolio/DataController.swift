@@ -6,7 +6,9 @@
 //
 
 import CoreData
+import CoreSpotlight
 import SwiftUI
+import UserNotifications
 
 class DataController: ObservableObject {
     let container: NSPersistentCloudKitContainer
@@ -86,8 +88,18 @@ class DataController: ObservableObject {
             try? container.viewContext.save()
         }
     }
+    // delete projects and from searchable
+    func delete(_ object: Project) {
+        let id = object.objectID.uriRepresentation().absoluteString
+        CSSearchableIndex.default().deleteSearchableItems(withDomainIdentifiers: [id])
 
-    func delete(_ object: NSManagedObject) {
+        container.viewContext.delete(object)
+    }
+    // delete items and from searchable
+    func delete(_ object: Item) {
+        let id = object.objectID.uriRepresentation().absoluteString
+        CSSearchableIndex.default().deleteSearchableItems(withIdentifiers: [id])
+
         container.viewContext.delete(object)
     }
 
@@ -95,6 +107,7 @@ class DataController: ObservableObject {
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = Item.fetchRequest()
         let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
         _ = try? container.viewContext.execute(batchDeleteRequest1)
+
         let fetchRequest2: NSFetchRequest<NSFetchRequestResult> = Project.fetchRequest()
         let batchDeleteRequest2 = NSBatchDeleteRequest(fetchRequest: fetchRequest2)
         _ = try? container.viewContext.execute(batchDeleteRequest2)
@@ -106,21 +119,123 @@ class DataController: ObservableObject {
 
     func hasEarned(award: Award) -> Bool {
         switch award.criterion {
-// returns true if they added a certain number of items
+            // returns true if they added a certain number of items
         case "items":
             let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
             let awardCount = count(for: fetchRequest)
             return awardCount >= award.value
-// returns true if they completed a certain number of items
+            // returns true if they completed a certain number of items
         case "complete":
             let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
             fetchRequest.predicate = NSPredicate(format: "completed = true")
             let awardCount = count(for: fetchRequest)
             return awardCount >= award.value
-// a unknown award; this should not be allowed
+            // a unknown award; this should not be allowed
         default:
             // fatalError("Unknown award criterion \(award.criterion).")
             return false
+        }
+    }
+    // spotlight update items and projects
+    func spotlightUpdate(_ item: Item) {
+        let itemID = item.objectID.uriRepresentation().absoluteString
+        let projectID = item.project?.objectID.uriRepresentation().absoluteString
+
+        let attributeSet = CSSearchableItemAttributeSet(contentType: .text)
+        attributeSet.title = item.itemTitle
+        attributeSet.contentDescription = item.itemDetail
+
+        let searchableItem = CSSearchableItem(
+            uniqueIdentifier: itemID,
+            domainIdentifier: projectID,
+            attributeSet: attributeSet
+        )
+
+        CSSearchableIndex.default().indexSearchableItems([searchableItem])
+
+        save()
+    }
+    // spotlight verify items
+    func item(with uniqueIdentifier: String) -> Item? {
+        guard let url = URL(string: uniqueIdentifier) else {
+            return nil
+        }
+
+        guard let id = container.persistentStoreCoordinator.managedObjectID(forURIRepresentation: url) else {
+            return nil
+        }
+
+        return try? container.viewContext.existingObject(with: id) as? Item
+    }
+
+    // local notification
+    func addReminders(for project: Project, completion: @escaping (Bool) -> Void) {
+        let center = UNUserNotificationCenter.current()
+
+        center.getNotificationSettings { settings in
+            switch settings.authorizationStatus {
+            case .notDetermined:
+                self.requestNotifications { success in
+                    if success {
+                        self.placeReminders(for: project, completion: completion)
+                    } else {
+                        DispatchQueue.main.async {
+                            completion(false)
+                        }
+                    }
+                }
+            case .authorized:
+                self.placeReminders(for: project, completion: completion)
+            default:
+                DispatchQueue.main.async {
+                    completion(false)
+                }
+            }
+        }
+    }
+
+    func removeReminders(for project: Project) {
+        let center = UNUserNotificationCenter.current()
+        let id = project.objectID.uriRepresentation().absoluteString
+        center.removePendingNotificationRequests(withIdentifiers: [id])
+    }
+
+    private func requestNotifications(completion: @escaping (Bool) -> Void) {
+        let center = UNUserNotificationCenter.current()
+
+        center.requestAuthorization(options: [.alert, .sound]) { granted, _ in
+            completion(granted)
+        }
+    }
+
+    private func placeReminders(for project: Project, completion: @escaping (Bool) -> Void) {
+        let content = UNMutableNotificationContent()
+        content.sound = .default
+        content.title = project.projectTitle
+
+        if let projectDetail = project.detail {
+            content.subtitle = projectDetail
+        }
+
+        let components = Calendar.current.dateComponents([.hour, .minute], from: project.remiderTime ?? Date())
+        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
+
+        let id = project.objectID.uriRepresentation().absoluteString
+
+        let request = UNNotificationRequest(
+            identifier: id,
+            content: content,
+            trigger: trigger
+        )
+
+        UNUserNotificationCenter.current().add(request) { error in
+            DispatchQueue.main.async {
+                if error == nil {
+                    completion(true)
+                } else {
+                    completion(false)
+                }
+            }
         }
     }
 }

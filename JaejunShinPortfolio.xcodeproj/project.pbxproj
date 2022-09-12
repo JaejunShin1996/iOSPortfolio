@@ -26,6 +26,7 @@
 		526E56C728A3A06B00EC3F45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 526E56C628A3A06B00EC3F45 /* Preview Assets.xcassets */; };
 		526E56D028A3A08200EC3F45 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 526E56CD28A3A08200EC3F45 /* Main.xcdatamodeld */; };
 		526E56D128A3A08200EC3F45 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526E56CF28A3A08200EC3F45 /* DataController.swift */; };
+		52764FA128CEFDC900A00B42 /* UnlockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52764FA028CEFDC900A00B42 /* UnlockManager.swift */; };
 		52817CF528A4DB5500833C81 /* Item-CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52817CF428A4DB5500833C81 /* Item-CoreDataHelper.swift */; };
 		52817CF728A4DDAE00833C81 /* Project-CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52817CF628A4DDAE00833C81 /* Project-CoreDataHelper.swift */; };
 		52ADC78C28BF275F002BA3F3 /* ExtentionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ADC78B28BF275F002BA3F3 /* ExtentionTests.swift */; };
@@ -90,6 +91,8 @@
 		526E56CE28A3A08200EC3F45 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		526E56CF28A3A08200EC3F45 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		526E56D228A3A34D00EC3F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52764F9F28CEFAAE00A00B42 /* JaejunShinPortfolio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JaejunShinPortfolio.entitlements; sourceTree = "<group>"; };
+		52764FA028CEFDC900A00B42 /* UnlockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockManager.swift; sourceTree = SOURCE_ROOT; };
 		52817CF428A4DB5500833C81 /* Item-CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item-CoreDataHelper.swift"; sourceTree = "<group>"; };
 		52817CF628A4DDAE00833C81 /* Project-CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project-CoreDataHelper.swift"; sourceTree = "<group>"; };
 		52ADC78B28BF275F002BA3F3 /* ExtentionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionTests.swift; sourceTree = "<group>"; };
@@ -199,8 +202,8 @@
 				521758BC28C3205A005B526D /* ProjectsViewModel.swift */,
 				52E42E5428ACC223003EC564 /* SelectSomethingView.swift */,
 				521188A228A9FF2400981F22 /* ProjectHeaderView.swift */,
-				521188A628AA063100981F22 /* EditProjectView.swift */,
 				52E2861728A8E39F00F2474C /* ItemRowView.swift */,
+				521188A628AA063100981F22 /* EditProjectView.swift */,
 				52E2861528A8DD7D00F2474C /* EditItemView.swift */,
 			);
 			path = Projects;
@@ -262,6 +265,8 @@
 		526E56BE28A3A06900EC3F45 /* JaejunShinPortfolio */ = {
 			isa = PBXGroup;
 			children = (
+				52764FA028CEFDC900A00B42 /* UnlockManager.swift */,
+				52764F9F28CEFAAE00A00B42 /* JaejunShinPortfolio.entitlements */,
 				5201825728BC6CC1004C667E /* Activities */,
 				5201825628BC6C06004C667E /* Extentions */,
 				5201825528BC6C02004C667E /* Localization */,
@@ -482,6 +487,7 @@
 				521188A328A9FF2400981F22 /* ProjectHeaderView.swift in Sources */,
 				52E5B9A128AE1E98005398F4 /* AwardsView.swift in Sources */,
 				526E56D028A3A08200EC3F45 /* Main.xcdatamodeld in Sources */,
+				52764FA128CEFDC900A00B42 /* UnlockManager.swift in Sources */,
 				5252883528C5B7DA00061D9E /* HomeViewModel.swift in Sources */,
 				521188A728AA063100981F22 /* EditProjectView.swift in Sources */,
 				5251162E28AF7E6D000E4E26 /* Color-Additions.swift in Sources */,
@@ -738,6 +744,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = JaejunShinPortfolio/JaejunShinPortfolio.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"JaejunShinPortfolio/Preview Content\"";
@@ -768,6 +775,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = JaejunShinPortfolio/JaejunShinPortfolio.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"JaejunShinPortfolio/Preview Content\"";

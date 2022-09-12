@@ -15,6 +15,8 @@ extension HomeView {
 
         @Published var projects = [Project]()
         @Published var items = [Item]()
+        // spotlight searched item
+        @Published var selectedItem: Item?
 
         var dataController: DataController
 
@@ -32,7 +34,7 @@ extension HomeView {
             // Constructs a fetch request for open projects
             let projectRequest: NSFetchRequest<Project> = Project.fetchRequest()
             projectRequest.predicate = NSPredicate(format: "closed = false")
-            projectRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Project.creationDate, ascending: false)]
+            projectRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Project.title, ascending: true)]
 
             projectsController = NSFetchedResultsController(
                 fetchRequest: projectRequest,
@@ -59,6 +61,7 @@ extension HomeView {
             )
 
             super.init()
+
             projectsController.delegate = self
             itemsController.delegate = self
 
@@ -87,6 +90,10 @@ extension HomeView {
             } catch {
                 print("Failed to create sample data")
             }
+        }
+        // assign searched item to selected item
+        func selectItem(with identifier: String) {
+            selectedItem = dataController.item(with: identifier )
         }
     }
 }

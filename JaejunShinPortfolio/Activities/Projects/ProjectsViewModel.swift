@@ -73,6 +73,6 @@ extension ProjectsView {
             if let newProjects = controller.fetchedObjects as? [Project] {
                 projects = newProjects
             }
-         }
+        }
     }
 }

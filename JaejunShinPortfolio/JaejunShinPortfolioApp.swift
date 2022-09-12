@@ -27,10 +27,12 @@ struct JaejunShinPortfolioApp: App {
                 // phase won't detect our app losing focus.
                 .onReceive(
                     NotificationCenter.default.publisher(
-                        for: UIApplication.willResignActiveNotification), perform: save
+                        for: UIApplication.willResignActiveNotification),
+                    perform: save
                 )
         }
     }
+
     func save(_ note: Notification) {
         dataController.save()
     }
