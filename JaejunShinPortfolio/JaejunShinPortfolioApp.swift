@@ -35,6 +35,7 @@ struct JaejunShinPortfolioApp: App {
                         for: UIApplication.willResignActiveNotification),
                     perform: save
                 )
+                .onAppear(perform: dataController.appLaunched)
         }
     }
 
