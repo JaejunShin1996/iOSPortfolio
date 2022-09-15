@@ -12,6 +12,8 @@ struct ContentView: View {
     @SceneStorage("selectedView") var selectedView: String?
     @EnvironmentObject var dataController: DataController
 
+    private let newProjectActivity = "com.jaejunshin.JaejunShinPortfolio.newProject"
+
     @State private var showingUnlockView = false
 
     var body: some View {
@@ -45,9 +47,12 @@ struct ContentView: View {
                 }
         }
         .onContinueUserActivity(CSSearchableItemActionType, perform: moveToHome)
-        .sheet(isPresented: $showingUnlockView, content: {
-            UnlockView()
+        .onContinueUserActivity(newProjectActivity, perform: createProjectFromShortcut)
+        .userActivity(newProjectActivity, { activity in
+            activity.title = "New Project"
+            activity.isEligibleForPrediction = true
         })
+        .sheet(isPresented: $showingUnlockView, content: { UnlockView() })
         .onOpenURL(perform: openURL)
     }
 
@@ -62,6 +67,11 @@ struct ContentView: View {
         if newProject == false {
             showingUnlockView.toggle()
         }
+    }
+
+    func createProjectFromShortcut(_ userActitivy: NSUserActivity) {
+        selectedView = ProjectsView.openTag
+        dataController.addProject()
     }
 }
 

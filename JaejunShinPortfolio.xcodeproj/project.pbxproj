@@ -263,9 +263,9 @@
 		525C807628D0549F0002E612 /* Unlock */ = {
 			isa = PBXGroup;
 			children = (
+				524DCA4B28D0382000DDF8A5 /* ProductView.swift */,
 				52764FA028CEFDC900A00B42 /* UnlockManager.swift */,
 				524DCA4928D032E100DDF8A5 /* PurchaseButton.swift */,
-				524DCA4B28D0382000DDF8A5 /* ProductView.swift */,
 				524DCA4D28D03E7C00DDF8A5 /* UnlockView.swift */,
 			);
 			path = Unlock;

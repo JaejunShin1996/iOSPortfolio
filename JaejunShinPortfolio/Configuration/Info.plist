@@ -19,6 +19,10 @@
 	<array>
 		<string>remote-notification</string>
 	</array>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>com.jaejunshin.JaejunShinPortfolio.newProject</string>
+	</array>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
