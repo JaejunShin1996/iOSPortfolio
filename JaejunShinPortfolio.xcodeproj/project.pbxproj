@@ -33,6 +33,8 @@
 		52764FA128CEFDC900A00B42 /* UnlockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52764FA028CEFDC900A00B42 /* UnlockManager.swift */; };
 		52817CF528A4DB5500833C81 /* Item-CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52817CF428A4DB5500833C81 /* Item-CoreDataHelper.swift */; };
 		52817CF728A4DDAE00833C81 /* Project-CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52817CF628A4DDAE00833C81 /* Project-CoreDataHelper.swift */; };
+		529DB27728D1B30300A48073 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529DB27628D1B30300A48073 /* AppDelegate.swift */; };
+		529DB27928D1B32C00A48073 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529DB27828D1B32C00A48073 /* SceneDelegate.swift */; };
 		52ADC78C28BF275F002BA3F3 /* ExtentionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ADC78B28BF275F002BA3F3 /* ExtentionTests.swift */; };
 		52ADC79128BF316D002BA3F3 /* DecodableString.json in Resources */ = {isa = PBXBuildFile; fileRef = 52ADC79028BF316D002BA3F3 /* DecodableString.json */; };
 		52ADC79728BF343E002BA3F3 /* DecodableDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 52ADC79628BF343E002BA3F3 /* DecodableDictionary.json */; };
@@ -83,6 +85,7 @@
 		5220040528C070D100B932B4 /* JaejunShinPortfolioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JaejunShinPortfolioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5220040728C070D100B932B4 /* JaejunShinPortfolioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JaejunShinPortfolioUITests.swift; sourceTree = "<group>"; };
 		5220040928C070D100B932B4 /* JaejunShinPortfolioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JaejunShinPortfolioUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		52350C8428D1C0350090C11C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524DCA4728D0323D00DDF8A5 /* SKProduct-LocalisedPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKProduct-LocalisedPrice.swift"; sourceTree = "<group>"; };
 		524DCA4928D032E100DDF8A5 /* PurchaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseButton.swift; sourceTree = "<group>"; };
 		524DCA4B28D0382000DDF8A5 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
@@ -99,11 +102,12 @@
 		526E56C628A3A06B00EC3F45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		526E56CE28A3A08200EC3F45 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		526E56CF28A3A08200EC3F45 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		526E56D228A3A34D00EC3F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52764F9F28CEFAAE00A00B42 /* JaejunShinPortfolio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JaejunShinPortfolio.entitlements; sourceTree = "<group>"; };
 		52764FA028CEFDC900A00B42 /* UnlockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UnlockManager.swift; path = JaejunShinPortfolio/Activities/Unlock/UnlockManager.swift; sourceTree = SOURCE_ROOT; };
 		52817CF428A4DB5500833C81 /* Item-CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item-CoreDataHelper.swift"; sourceTree = "<group>"; };
 		52817CF628A4DDAE00833C81 /* Project-CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project-CoreDataHelper.swift"; sourceTree = "<group>"; };
+		529DB27628D1B30300A48073 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		529DB27828D1B32C00A48073 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		52ADC78B28BF275F002BA3F3 /* ExtentionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionTests.swift; sourceTree = "<group>"; };
 		52ADC79028BF316D002BA3F3 /* DecodableString.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DecodableString.json; sourceTree = "<group>"; };
 		52ADC79628BF343E002BA3F3 /* DecodableDictionary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DecodableDictionary.json; sourceTree = "<group>"; };
@@ -156,9 +160,9 @@
 		5201825428BC6BFF004C667E /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				525C807728D05D430002E612 /* Configuration.storekit */,
-				526E56D228A3A34D00EC3F45 /* Info.plist */,
+				52350C8428D1C0350090C11C /* Info.plist */,
 				526E56CD28A3A08200EC3F45 /* Main.xcdatamodeld */,
+				525C807728D05D430002E612 /* Configuration.storekit */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -189,10 +193,10 @@
 		5201825728BC6CC1004C667E /* Activities */ = {
 			isa = PBXGroup;
 			children = (
-				525C807628D0549F0002E612 /* Unlock */,
 				5201825A28BC6CD0004C667E /* Home */,
 				5201825928BC6CCE004C667E /* Projects */,
 				5201825828BC6CCC004C667E /* Awards */,
+				525C807628D0549F0002E612 /* Unlock */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
@@ -294,6 +298,8 @@
 				5201825528BC6C02004C667E /* Localization */,
 				5201825428BC6BFF004C667E /* Configuration */,
 				526E56BF28A3A06900EC3F45 /* JaejunShinPortfolioApp.swift */,
+				529DB27628D1B30300A48073 /* AppDelegate.swift */,
+				529DB27828D1B32C00A48073 /* SceneDelegate.swift */,
 				526E56C128A3A06900EC3F45 /* ContentView.swift */,
 				526E56CF28A3A08200EC3F45 /* DataController.swift */,
 				5201826028BC861F004C667E /* JaejunShinPortfolioTests */,
@@ -387,7 +393,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					5201825E28BC861F004C667E = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -458,6 +464,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		5266AA0228B8A64E0018632F /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -508,6 +515,8 @@
 				525BC8D828B72B950022E661 /* ProjectSummaryView.swift in Sources */,
 				524DCA4E28D03E7C00DDF8A5 /* UnlockView.swift in Sources */,
 				521188A328A9FF2400981F22 /* ProjectHeaderView.swift in Sources */,
+				529DB27728D1B30300A48073 /* AppDelegate.swift in Sources */,
+				529DB27928D1B32C00A48073 /* SceneDelegate.swift in Sources */,
 				52E5B9A128AE1E98005398F4 /* AwardsView.swift in Sources */,
 				524DCA4828D0323D00DDF8A5 /* SKProduct-LocalisedPrice.swift in Sources */,
 				526E56D028A3A08200EC3F45 /* Main.xcdatamodeld in Sources */,
@@ -655,6 +664,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -716,6 +726,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

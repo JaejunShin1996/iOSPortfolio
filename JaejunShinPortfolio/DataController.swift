@@ -106,6 +106,7 @@ class DataController: ObservableObject {
             try? container.viewContext.save()
         }
     }
+
     // delete projects and from searchable
     func delete(_ object: Project) {
         let id = object.objectID.uriRepresentation().absoluteString
@@ -113,6 +114,7 @@ class DataController: ObservableObject {
 
         container.viewContext.delete(object)
     }
+
     // delete items and from searchable
     func delete(_ object: Item) {
         let id = object.objectID.uriRepresentation().absoluteString
@@ -135,6 +137,20 @@ class DataController: ObservableObject {
         (try? container.viewContext.count(for: fetchRequest)) ?? 0
     }
 
+    @discardableResult func addProject() -> Bool {
+        let canCreate = fullVersionUnlocked || count(for: Project.fetchRequest()) < 3
+
+        if canCreate {
+            let project = Project(context: container.viewContext)
+            project.closed = false
+            project.creationDate = Date()
+            save()
+            return true
+        } else {
+            return false
+        }
+    }
+
     func hasEarned(award: Award) -> Bool {
         switch award.criterion {
             // returns true if they added a certain number of items
@@ -154,6 +170,7 @@ class DataController: ObservableObject {
             return false
         }
     }
+
     // spotlight update items and projects
     func spotlightUpdate(_ item: Item) {
         let itemID = item.objectID.uriRepresentation().absoluteString
@@ -173,6 +190,7 @@ class DataController: ObservableObject {
 
         save()
     }
+
     // spotlight verify items
     func item(with uniqueIdentifier: String) -> Item? {
         guard let url = URL(string: uniqueIdentifier) else {

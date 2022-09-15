@@ -12,6 +12,8 @@ struct ContentView: View {
     @SceneStorage("selectedView") var selectedView: String?
     @EnvironmentObject var dataController: DataController
 
+    @State private var showingUnlockView = false
+
     var body: some View {
         TabView(selection: $selectedView) {
             HomeView(dataController: dataController)
@@ -43,10 +45,23 @@ struct ContentView: View {
                 }
         }
         .onContinueUserActivity(CSSearchableItemActionType, perform: moveToHome)
+        .sheet(isPresented: $showingUnlockView, content: {
+            UnlockView()
+        })
+        .onOpenURL(perform: openURL)
     }
 
     func moveToHome(_ input: Any) {
         selectedView = HomeView.tag
+    }
+
+    func openURL(_ url: URL) {
+        selectedView = ProjectsView.openTag
+        let newProject = dataController.addProject()
+
+        if newProject == false {
+            showingUnlockView.toggle()
+        }
     }
 }
 
