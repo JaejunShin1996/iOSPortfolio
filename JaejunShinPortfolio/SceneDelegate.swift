@@ -10,6 +10,7 @@ import SwiftUI
 class SceneDelegate: NSObject, UIWindowSceneDelegate {
     @Environment(\.openURL) var openURL
 
+    // runs when the app is alive
     func windowScene(
         _ windowScene: UIWindowScene,
         performActionFor shortcutItem: UIApplicationShortcutItem,
@@ -23,6 +24,7 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
         openURL(url, completion: completionHandler)
     }
 
+    // runs when the app is dead
     func scene(
         _ scene: UIScene,
         willConnectTo session: UISceneSession,

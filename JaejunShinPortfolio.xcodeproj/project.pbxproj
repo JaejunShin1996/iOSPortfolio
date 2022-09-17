@@ -13,6 +13,7 @@
 		521188A528AA030000981F22 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521188A428AA030000981F22 /* Colors.xcassets */; };
 		521188A728AA063100981F22 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521188A628AA063100981F22 /* EditProjectView.swift */; };
 		521758BD28C3205A005B526D /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521758BC28C3205A005B526D /* ProjectsViewModel.swift */; };
+		521A9B3628D5D07D0036A849 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52F4F57A28B4A6ED00D95D92 /* Localizable.strings */; };
 		5220040028C066A100B932B4 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522003FF28C066A100B932B4 /* PerformanceTests.swift */; };
 		5220040828C070D100B932B4 /* JaejunShinPortfolioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5220040728C070D100B932B4 /* JaejunShinPortfolioUITests.swift */; };
 		5220040A28C070D100B932B4 /* JaejunShinPortfolioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5220040928C070D100B932B4 /* JaejunShinPortfolioUITestsLaunchTests.swift */; };
@@ -24,6 +25,16 @@
 		5252883528C5B7DA00061D9E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5252883428C5B7DA00061D9E /* HomeViewModel.swift */; };
 		525BC8D628B729AA0022E661 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525BC8D528B729AA0022E661 /* ItemListView.swift */; };
 		525BC8D828B72B950022E661 /* ProjectSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525BC8D728B72B950022E661 /* ProjectSummaryView.swift */; };
+		526E13C528D437430052BE58 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526E13C428D437430052BE58 /* WidgetKit.framework */; };
+		526E13C728D437430052BE58 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526E13C628D437430052BE58 /* SwiftUI.framework */; };
+		526E13CA28D437440052BE58 /* PortfolioWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526E13C928D437440052BE58 /* PortfolioWidget.swift */; };
+		526E13CD28D437460052BE58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 526E13CC28D437460052BE58 /* Assets.xcassets */; };
+		526E13D328D437460052BE58 /* PortfolioWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 526E13C228D437430052BE58 /* PortfolioWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		526E13D828D4374E0052BE58 /* Item-CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52817CF428A4DB5500833C81 /* Item-CoreDataHelper.swift */; };
+		526E13D928D437520052BE58 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526E56CF28A3A08200EC3F45 /* DataController.swift */; };
+		526E13DD28D438D90052BE58 /* DataController-Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526E13DC28D438D90052BE58 /* DataController-Reminder.swift */; };
+		526E13DF28D4397C0052BE58 /* DataController-Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526E13DE28D4397C0052BE58 /* DataController-Award.swift */; };
+		526E13E128D454D20052BE58 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 526E56CD28A3A08200EC3F45 /* Main.xcdatamodeld */; };
 		526E56C028A3A06900EC3F45 /* JaejunShinPortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526E56BF28A3A06900EC3F45 /* JaejunShinPortfolioApp.swift */; };
 		526E56C228A3A06900EC3F45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526E56C128A3A06900EC3F45 /* ContentView.swift */; };
 		526E56C428A3A06B00EC3F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 526E56C328A3A06B00EC3F45 /* Assets.xcassets */; };
@@ -71,7 +82,28 @@
 			remoteGlobalIDString = 526E56BB28A3A06900EC3F45;
 			remoteInfo = JaejunShinPortfolio;
 		};
+		526E13D128D437460052BE58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 526E56B428A3A06900EC3F45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 526E13C128D437430052BE58;
+			remoteInfo = PortfolioWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		526E13D428D437460052BE58 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				526E13D328D437460052BE58 /* PortfolioWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5201825F28BC861F004C667E /* JaejunShinPortfolioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JaejunShinPortfolioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +127,15 @@
 		525BC8D528B729AA0022E661 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		525BC8D728B72B950022E661 /* ProjectSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSummaryView.swift; sourceTree = "<group>"; };
 		525C807728D05D430002E612 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		526E13C228D437430052BE58 /* PortfolioWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PortfolioWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		526E13C428D437430052BE58 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		526E13C628D437430052BE58 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		526E13C928D437440052BE58 /* PortfolioWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioWidget.swift; sourceTree = "<group>"; };
+		526E13CC28D437460052BE58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		526E13CE28D437460052BE58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		526E13DC28D438D90052BE58 /* DataController-Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController-Reminder.swift"; sourceTree = "<group>"; };
+		526E13DE28D4397C0052BE58 /* DataController-Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController-Award.swift"; sourceTree = "<group>"; };
+		526E13E028D43BCC0052BE58 /* PortfolioWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PortfolioWidgetExtension.entitlements; sourceTree = "<group>"; };
 		526E56BC28A3A06900EC3F45 /* JaejunShinPortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JaejunShinPortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		526E56BF28A3A06900EC3F45 /* JaejunShinPortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JaejunShinPortfolioApp.swift; sourceTree = "<group>"; };
 		526E56C128A3A06900EC3F45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -144,6 +185,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		526E13BF28D437430052BE58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				526E13C728D437430052BE58 /* SwiftUI.framework in Frameworks */,
+				526E13C528D437430052BE58 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,10 +321,32 @@
 			path = Unlock;
 			sourceTree = "<group>";
 		};
+		526E13C328D437430052BE58 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				526E13C428D437430052BE58 /* WidgetKit.framework */,
+				526E13C628D437430052BE58 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		526E13C828D437440052BE58 /* PortfolioWidget */ = {
+			isa = PBXGroup;
+			children = (
+				526E13C928D437440052BE58 /* PortfolioWidget.swift */,
+				526E13CC28D437460052BE58 /* Assets.xcassets */,
+				526E13CE28D437460052BE58 /* Info.plist */,
+			);
+			path = PortfolioWidget;
+			sourceTree = "<group>";
+		};
 		526E56B328A3A06900EC3F45 = {
 			isa = PBXGroup;
 			children = (
+				526E13E028D43BCC0052BE58 /* PortfolioWidgetExtension.entitlements */,
 				526E56BE28A3A06900EC3F45 /* JaejunShinPortfolio */,
+				526E13C828D437440052BE58 /* PortfolioWidget */,
+				526E13C328D437430052BE58 /* Frameworks */,
 				526E56BD28A3A06900EC3F45 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -285,6 +357,7 @@
 				526E56BC28A3A06900EC3F45 /* JaejunShinPortfolio.app */,
 				5201825F28BC861F004C667E /* JaejunShinPortfolioTests.xctest */,
 				5220040528C070D100B932B4 /* JaejunShinPortfolioUITests.xctest */,
+				526E13C228D437430052BE58 /* PortfolioWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -302,6 +375,8 @@
 				529DB27828D1B32C00A48073 /* SceneDelegate.swift */,
 				526E56C128A3A06900EC3F45 /* ContentView.swift */,
 				526E56CF28A3A08200EC3F45 /* DataController.swift */,
+				526E13DC28D438D90052BE58 /* DataController-Reminder.swift */,
+				526E13DE28D4397C0052BE58 /* DataController-Award.swift */,
 				5201826028BC861F004C667E /* JaejunShinPortfolioTests */,
 				5220040628C070D100B932B4 /* JaejunShinPortfolioUITests */,
 				526E56C328A3A06B00EC3F45 /* Assets.xcassets */,
@@ -367,6 +442,23 @@
 			productReference = 5220040528C070D100B932B4 /* JaejunShinPortfolioUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		526E13C128D437430052BE58 /* PortfolioWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 526E13D728D437460052BE58 /* Build configuration list for PBXNativeTarget "PortfolioWidgetExtension" */;
+			buildPhases = (
+				526E13BE28D437430052BE58 /* Sources */,
+				526E13BF28D437430052BE58 /* Frameworks */,
+				526E13C028D437430052BE58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PortfolioWidgetExtension;
+			productName = PortfolioWidgetExtension;
+			productReference = 526E13C228D437430052BE58 /* PortfolioWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		526E56BB28A3A06900EC3F45 /* JaejunShinPortfolio */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 526E56CA28A3A06B00EC3F45 /* Build configuration list for PBXNativeTarget "JaejunShinPortfolio" */;
@@ -375,10 +467,12 @@
 				526E56B828A3A06900EC3F45 /* Sources */,
 				526E56B928A3A06900EC3F45 /* Frameworks */,
 				526E56BA28A3A06900EC3F45 /* Resources */,
+				526E13D428D437460052BE58 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				526E13D228D437460052BE58 /* PBXTargetDependency */,
 			);
 			name = JaejunShinPortfolio;
 			productName = JaejunShinPortfolio;
@@ -392,7 +486,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					5201825E28BC861F004C667E = {
@@ -402,6 +496,9 @@
 					5220040428C070D100B932B4 = {
 						CreatedOnToolsVersion = 13.4.1;
 						TestTargetID = 526E56BB28A3A06900EC3F45;
+					};
+					526E13C128D437430052BE58 = {
+						CreatedOnToolsVersion = 14.0;
 					};
 					526E56BB28A3A06900EC3F45 = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -425,6 +522,7 @@
 				526E56BB28A3A06900EC3F45 /* JaejunShinPortfolio */,
 				5201825E28BC861F004C667E /* JaejunShinPortfolioTests */,
 				5220040428C070D100B932B4 /* JaejunShinPortfolioUITests */,
+				526E13C128D437430052BE58 /* PortfolioWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -443,6 +541,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		526E13C028D437430052BE58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				526E13CD28D437460052BE58 /* Assets.xcassets in Resources */,
+				521A9B3628D5D07D0036A849 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +614,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		526E13BE28D437430052BE58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				526E13D928D437520052BE58 /* DataController.swift in Sources */,
+				526E13CA28D437440052BE58 /* PortfolioWidget.swift in Sources */,
+				526E13D828D4374E0052BE58 /* Item-CoreDataHelper.swift in Sources */,
+				526E13E128D454D20052BE58 /* Main.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		526E56B828A3A06900EC3F45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -528,6 +646,7 @@
 				52817CF528A4DB5500833C81 /* Item-CoreDataHelper.swift in Sources */,
 				526E56D128A3A08200EC3F45 /* DataController.swift in Sources */,
 				524DCA4A28D032E100DDF8A5 /* PurchaseButton.swift in Sources */,
+				526E13DF28D4397C0052BE58 /* DataController-Award.swift in Sources */,
 				52E42E5528ACC223003EC564 /* SelectSomethingView.swift in Sources */,
 				52E5B99F28AE1C37005398F4 /* Award.swift in Sources */,
 				52E2861828A8E39F00F2474C /* ItemRowView.swift in Sources */,
@@ -535,6 +654,7 @@
 				52E2861A28A8ED1300F2474C /* Binding-OnChange.swift in Sources */,
 				52E42E5328AC9D5D003EC564 /* Sequence-Sorting.swift in Sources */,
 				52E5B99D28AE1AE3005398F4 /* Bundle-Decodable.swift in Sources */,
+				526E13DD28D438D90052BE58 /* DataController-Reminder.swift in Sources */,
 				525BC8D628B729AA0022E661 /* ItemListView.swift in Sources */,
 				52E2861628A8DD7D00F2474C /* EditItemView.swift in Sources */,
 				52D5549C28A3B685000C26A9 /* HomeView.swift in Sources */,
@@ -556,6 +676,11 @@
 			isa = PBXTargetDependency;
 			target = 526E56BB28A3A06900EC3F45 /* JaejunShinPortfolio */;
 			targetProxy = 5220040B28C070D100B932B4 /* PBXContainerItemProxy */;
+		};
+		526E13D228D437460052BE58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 526E13C128D437430052BE58 /* PortfolioWidgetExtension */;
+			targetProxy = 526E13D128D437460052BE58 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -657,6 +782,66 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = JaejunShinPortfolio;
+			};
+			name = Release;
+		};
+		526E13D528D437460052BE58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = PortfolioWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YZ2HTNTHQP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PortfolioWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PortfolioWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jaejunshin.JaejunShinPortfolio.PortfolioWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		526E13D628D437460052BE58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = PortfolioWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YZ2HTNTHQP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PortfolioWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PortfolioWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jaejunshin.JaejunShinPortfolio.PortfolioWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -781,6 +966,7 @@
 		526E56CB28A3A06B00EC3F45 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = JaejunShinPortfolio/JaejunShinPortfolio.entitlements;
@@ -813,6 +999,7 @@
 		526E56CC28A3A06B00EC3F45 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = JaejunShinPortfolio/JaejunShinPortfolio.entitlements;
@@ -859,6 +1046,15 @@
 			buildConfigurations = (
 				5220040E28C070D100B932B4 /* Debug */,
 				5220040F28C070D100B932B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		526E13D728D437460052BE58 /* Build configuration list for PBXNativeTarget "PortfolioWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				526E13D528D437460052BE58 /* Debug */,
+				526E13D628D437460052BE58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
