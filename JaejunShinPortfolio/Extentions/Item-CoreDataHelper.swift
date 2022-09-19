@@ -24,10 +24,6 @@ extension Item {
         creationDate ?? Date()
     }
 
-    var color: String {
-        project?.color ?? "Light Blue"
-    }
-
     static var example: Item {
         let controller = DataController.preview
         let viewContext = controller.container.viewContext

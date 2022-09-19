@@ -56,6 +56,7 @@
 		52ADC78C28BF275F002BA3F3 /* ExtentionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ADC78B28BF275F002BA3F3 /* ExtentionTests.swift */; };
 		52ADC79128BF316D002BA3F3 /* DecodableString.json in Resources */ = {isa = PBXBuildFile; fileRef = 52ADC79028BF316D002BA3F3 /* DecodableString.json */; };
 		52ADC79728BF343E002BA3F3 /* DecodableDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 52ADC79628BF343E002BA3F3 /* DecodableDictionary.json */; };
+		52BE15EA28D839230073255E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521188A428AA030000981F22 /* Colors.xcassets */; };
 		52D40E3828BDCB0D00A9D15E /* ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D40E3728BDCB0D00A9D15E /* ProjectTests.swift */; };
 		52D40E3A28BDD7A600A9D15E /* AwardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D40E3928BDD7A600A9D15E /* AwardTests.swift */; };
 		52D40E3C28BDF65200A9D15E /* DevelopmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D40E3B28BDF65200A9D15E /* DevelopmentTests.swift */; };
@@ -564,6 +565,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				526E13CD28D437460052BE58 /* Assets.xcassets in Resources */,
+				52BE15EA28D839230073255E /* Colors.xcassets in Resources */,
 				521A9B3628D5D07D0036A849 /* Localizable.strings in Resources */,
 				521A9B3928D5F1DA0036A849 /* Localizable.stringsdict in Resources */,
 			);

@@ -5,6 +5,7 @@
 //  Created by Jaejun Shin on 17/9/2022.
 //
 
+import Foundation
 import SwiftUI
 import WidgetKit
 
@@ -41,7 +42,7 @@ struct PortfolioWidgetMultipleEntryView: View {
         VStack(spacing: 5) {
             ForEach(items) { item in
                 HStack {
-                    Color(.black)
+                    Color(item.project?.color ?? "Light Blue")
                         .frame(width: 5)
                         .clipShape(Capsule())
 
@@ -49,11 +50,11 @@ struct PortfolioWidgetMultipleEntryView: View {
                         Text(item.itemTitle)
                             .font(.headline)
                             .layoutPriority(1)
-// Can not figuare out that why it is not able to fetch data from projects
-//                        if let projectTitle = item.project?.title {
-//                            Text(projectTitle)
-//                                .foregroundColor(.secondary)
-//                        }
+
+                        if let projectTitle = item.project?.title {
+                            Text(projectTitle)
+                                .font(.footnote)
+                        }
                     }
                     Spacer()
                 }

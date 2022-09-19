@@ -51,6 +51,8 @@ class DataController: ObservableObject {
                 fatalError("Fatal error loading stroe: \(error.localizedDescription)")
             }
 
+            self.container.viewContext.automaticallyMergesChangesFromParent = true
+
             #if DEBUG
             if CommandLine.arguments.contains("enable-testing") {
                 self.deleteAll()
