@@ -14,6 +14,11 @@
 		521188A728AA063100981F22 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521188A628AA063100981F22 /* EditProjectView.swift */; };
 		521758BD28C3205A005B526D /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521758BC28C3205A005B526D /* ProjectsViewModel.swift */; };
 		521A9B3628D5D07D0036A849 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52F4F57A28B4A6ED00D95D92 /* Localizable.strings */; };
+		521A9B3928D5F1DA0036A849 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 52F4F57E28B4A6F700D95D92 /* Localizable.stringsdict */; };
+		521A9B3B28D5F3390036A849 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A9B3A28D5F3390036A849 /* DataProvider.swift */; };
+		521A9B3D28D5F3680036A849 /* SimpleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A9B3C28D5F3680036A849 /* SimpleWidget.swift */; };
+		521A9B3F28D5F3720036A849 /* ComplexWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A9B3E28D5F3720036A849 /* ComplexWidget.swift */; };
+		521A9B4128D5F5290036A849 /* DataController-StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A9B4028D5F5290036A849 /* DataController-StoreKit.swift */; };
 		5220040028C066A100B932B4 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522003FF28C066A100B932B4 /* PerformanceTests.swift */; };
 		5220040828C070D100B932B4 /* JaejunShinPortfolioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5220040728C070D100B932B4 /* JaejunShinPortfolioUITests.swift */; };
 		5220040A28C070D100B932B4 /* JaejunShinPortfolioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5220040928C070D100B932B4 /* JaejunShinPortfolioUITestsLaunchTests.swift */; };
@@ -44,6 +49,8 @@
 		52764FA128CEFDC900A00B42 /* UnlockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52764FA028CEFDC900A00B42 /* UnlockManager.swift */; };
 		52817CF528A4DB5500833C81 /* Item-CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52817CF428A4DB5500833C81 /* Item-CoreDataHelper.swift */; };
 		52817CF728A4DDAE00833C81 /* Project-CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52817CF628A4DDAE00833C81 /* Project-CoreDataHelper.swift */; };
+		528927A328D8132200FEA2FE /* Project-CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52817CF628A4DDAE00833C81 /* Project-CoreDataHelper.swift */; };
+		528927A428D8132500FEA2FE /* Sequence-Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E42E5228AC9D5D003EC564 /* Sequence-Sorting.swift */; };
 		529DB27728D1B30300A48073 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529DB27628D1B30300A48073 /* AppDelegate.swift */; };
 		529DB27928D1B32C00A48073 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529DB27828D1B32C00A48073 /* SceneDelegate.swift */; };
 		52ADC78C28BF275F002BA3F3 /* ExtentionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ADC78B28BF275F002BA3F3 /* ExtentionTests.swift */; };
@@ -113,6 +120,10 @@
 		521188A428AA030000981F22 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		521188A628AA063100981F22 /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
 		521758BC28C3205A005B526D /* ProjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewModel.swift; sourceTree = "<group>"; };
+		521A9B3A28D5F3390036A849 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		521A9B3C28D5F3680036A849 /* SimpleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWidget.swift; sourceTree = "<group>"; };
+		521A9B3E28D5F3720036A849 /* ComplexWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexWidget.swift; sourceTree = "<group>"; };
+		521A9B4028D5F5290036A849 /* DataController-StoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController-StoreKit.swift"; sourceTree = "<group>"; };
 		522003FF28C066A100B932B4 /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
 		5220040528C070D100B932B4 /* JaejunShinPortfolioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JaejunShinPortfolioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5220040728C070D100B932B4 /* JaejunShinPortfolioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JaejunShinPortfolioUITests.swift; sourceTree = "<group>"; };
@@ -334,6 +345,9 @@
 			isa = PBXGroup;
 			children = (
 				526E13C928D437440052BE58 /* PortfolioWidget.swift */,
+				521A9B3C28D5F3680036A849 /* SimpleWidget.swift */,
+				521A9B3E28D5F3720036A849 /* ComplexWidget.swift */,
+				521A9B3A28D5F3390036A849 /* DataProvider.swift */,
 				526E13CC28D437460052BE58 /* Assets.xcassets */,
 				526E13CE28D437460052BE58 /* Info.plist */,
 			);
@@ -375,6 +389,7 @@
 				529DB27828D1B32C00A48073 /* SceneDelegate.swift */,
 				526E56C128A3A06900EC3F45 /* ContentView.swift */,
 				526E56CF28A3A08200EC3F45 /* DataController.swift */,
+				521A9B4028D5F5290036A849 /* DataController-StoreKit.swift */,
 				526E13DC28D438D90052BE58 /* DataController-Reminder.swift */,
 				526E13DE28D4397C0052BE58 /* DataController-Award.swift */,
 				5201826028BC861F004C667E /* JaejunShinPortfolioTests */,
@@ -550,6 +565,7 @@
 			files = (
 				526E13CD28D437460052BE58 /* Assets.xcassets in Resources */,
 				521A9B3628D5D07D0036A849 /* Localizable.strings in Resources */,
+				521A9B3928D5F1DA0036A849 /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,8 +636,13 @@
 			files = (
 				526E13D928D437520052BE58 /* DataController.swift in Sources */,
 				526E13CA28D437440052BE58 /* PortfolioWidget.swift in Sources */,
+				521A9B3B28D5F3390036A849 /* DataProvider.swift in Sources */,
+				528927A428D8132500FEA2FE /* Sequence-Sorting.swift in Sources */,
 				526E13D828D4374E0052BE58 /* Item-CoreDataHelper.swift in Sources */,
 				526E13E128D454D20052BE58 /* Main.xcdatamodeld in Sources */,
+				521A9B3D28D5F3680036A849 /* SimpleWidget.swift in Sources */,
+				528927A328D8132200FEA2FE /* Project-CoreDataHelper.swift in Sources */,
+				521A9B3F28D5F3720036A849 /* ComplexWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,6 +659,7 @@
 				52E5B9A128AE1E98005398F4 /* AwardsView.swift in Sources */,
 				524DCA4828D0323D00DDF8A5 /* SKProduct-LocalisedPrice.swift in Sources */,
 				526E56D028A3A08200EC3F45 /* Main.xcdatamodeld in Sources */,
+				521A9B4128D5F5290036A849 /* DataController-StoreKit.swift in Sources */,
 				52764FA128CEFDC900A00B42 /* UnlockManager.swift in Sources */,
 				5252883528C5B7DA00061D9E /* HomeViewModel.swift in Sources */,
 				521188A728AA063100981F22 /* EditProjectView.swift in Sources */,
