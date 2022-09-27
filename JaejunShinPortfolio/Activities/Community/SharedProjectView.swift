@@ -13,6 +13,7 @@ struct SharedProjectView: View {
 
     @State private var projects = [SharedProject]()
     @State private var loadState = LoadState.inactive
+    @State private var cloudError: CloudError?
 
     var body: some View {
         NavigationView {
@@ -47,6 +48,12 @@ struct SharedProjectView: View {
             .navigationTitle("Shared Projects")
         }
         .onAppear(perform: fetchSharedProjects)
+        .alert(item: $cloudError) { error in
+            Alert(
+                title: Text("There was an error."),
+                message: Text(error.message)
+            )
+        }
     }
 
     func fetchSharedProjects() {
@@ -74,6 +81,7 @@ struct SharedProjectView: View {
                 projects.append(sharedProject)
                 loadState = .success
             case .failure(let error):
+                cloudError = error.getCloudKitError()
                 loadState = .noResults
                 print("debug: \(error.localizedDescription)")
             }
@@ -85,6 +93,7 @@ struct SharedProjectView: View {
                 print("\(String(describing: cursor?.description))")
             case .failure(let error):
                 print("debug: \(error.localizedDescription)")
+                cloudError = error.getCloudKitError()
                 loadState = .noResults
             }
         }

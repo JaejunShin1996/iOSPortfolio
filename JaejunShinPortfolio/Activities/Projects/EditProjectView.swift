@@ -10,6 +10,10 @@ import CoreHaptics
 import SwiftUI
 
 struct EditProjectView: View {
+    enum CloudStatus {
+        case checking, absent, exists
+    }
+
     @EnvironmentObject var dataController: DataController
     @Environment(\.presentationMode) var presentationMode
 
@@ -27,6 +31,9 @@ struct EditProjectView: View {
 
     @AppStorage("username") var username: String?
     @State private var showingSignIn = false
+
+    @State private var cloudStatus = CloudStatus.checking
+    @State private var cloudError: CloudError?
 
     @State private var engine = try? CHHapticEngine()
 
@@ -105,15 +112,23 @@ struct EditProjectView: View {
             }
 
         }
+        .onAppear(perform: updateCloudStatus)
+        .onDisappear(perform: dataController.save)
         .navigationTitle("Edit View")
         .toolbar {
-            Button {
-                uploadToCloud()
-            } label: {
-                Label("Upload to iCloud", systemImage: "icloud.and.arrow.up")
+            switch cloudStatus {
+            case .checking:
+                ProgressView()
+            case .exists:
+                Button(action: removeFromCloud) {
+                    Label("Remove from iCloud", systemImage: "icloud.slash")
+                }
+            case .absent:
+                Button(action: uploadToCloud) {
+                    Label("Upload to iCloud", systemImage: "icloud.and.arrow.up")
+                }
             }
         }
-        .onDisappear(perform: dataController.save)
         .alert(isPresented: $showingDeleteConfirm) {
             Alert(
                 title: Text("Delete project?"),
@@ -121,6 +136,12 @@ struct EditProjectView: View {
                 message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."),
                 primaryButton: .destructive(Text("Delete"), action: delete),
                 secondaryButton: .cancel()
+            )
+        }
+        .alert(item: $cloudError) { error in
+            Alert(
+                title: Text("There was an error"),
+                message: Text(error.message)
             )
         }
         .sheet(isPresented: $showingSignIn, content: SignInView.init)
@@ -228,6 +249,16 @@ struct EditProjectView: View {
         }
     }
 
+    func updateCloudStatus() {
+        project.checkCloudStatus { exists in
+            if exists {
+                cloudStatus = .exists
+            } else {
+                cloudStatus = .absent
+            }
+        }
+    }
+
     func uploadToCloud() {
         if let username = username {
             let records = project.prepareCloudRecords(owner: username)
@@ -239,14 +270,38 @@ struct EditProjectView: View {
                 case .success(let success):
                     print("success: \(success)")
                 case .failure(let error):
-                    print("Error: \(error.localizedDescription)")
+                    cloudError = error.getCloudKitError()
                 }
+                updateCloudStatus()
             }
+
+            cloudStatus = .checking
 
             CKContainer.default().publicCloudDatabase.add(operation)
         } else {
             showingSignIn = true
         }
+    }
+
+    func removeFromCloud() {
+        let name = project.objectID.uriRepresentation().absoluteString
+        let id = CKRecord.ID(recordName: name)
+
+        let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [id])
+
+        operation.modifyRecordsResultBlock = { result in
+            switch result {
+            case .success(let success):
+                print("success: \(success)")
+            case .failure(let error):
+                cloudError = error.getCloudKitError()
+            }
+            updateCloudStatus()
+        }
+
+        cloudStatus = .checking
+
+        CKContainer.default().publicCloudDatabase.add(operation)
     }
 }
 
