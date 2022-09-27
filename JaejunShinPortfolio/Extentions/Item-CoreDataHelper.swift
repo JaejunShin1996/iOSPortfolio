@@ -8,7 +8,7 @@
 import Foundation
 
 extension Item {
-    enum SortOrders {
+    enum SortOrder {
         case optimised, creationDate, title
     }
 

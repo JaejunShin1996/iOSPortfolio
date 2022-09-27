@@ -5,6 +5,7 @@
 //  Created by Jaejun Shin on 15/8/2022.
 //
 
+import CloudKit
 import CoreHaptics
 import SwiftUI
 
@@ -18,11 +19,14 @@ struct EditProjectView: View {
     @State private var detail: String
     @State private var color: String
 
-    @State private var remiderTime: Date
-    @State private var remiderMe: Bool
+    @State private var reminderTime: Date
+    @State private var reminderMe: Bool
 
     @State private var showingDeleteConfirm = false
     @State private var showingNotificationError = false
+
+    @AppStorage("username") var username: String?
+    @State private var showingSignIn = false
 
     @State private var engine = try? CHHapticEngine()
 
@@ -33,12 +37,12 @@ struct EditProjectView: View {
         _detail = State(wrappedValue: project.projectDetail)
         _color = State(wrappedValue: project.projectColor)
 
-        if let projectRemiderTime = project.remiderTime {
-            _remiderTime = State(wrappedValue: projectRemiderTime)
-            _remiderMe = State(wrappedValue: true)
+        if let projectReminderTime = project.reminderTime {
+            _reminderTime = State(wrappedValue: projectReminderTime)
+            _reminderMe = State(wrappedValue: true)
         } else {
-            _remiderTime = State(wrappedValue: Date())
-            _remiderMe = State(wrappedValue: false)
+            _reminderTime = State(wrappedValue: Date())
+            _reminderMe = State(wrappedValue: false)
         }
     }
 
@@ -49,8 +53,8 @@ struct EditProjectView: View {
     var body: some View {
         Form {
             Section {
-                TextField("Project name", text: $title)
-                TextField("Description of this project", text: $detail)
+                TextField("Project name", text: $title.onChange(update))
+                TextField("Description of this project", text: $detail.onChange(update))
             } header: {
                 Text("Basic Settings")
             }
@@ -65,7 +69,7 @@ struct EditProjectView: View {
             }
 
             Section {
-                Toggle("Show reminders", isOn: $remiderMe.animation().onChange(update))
+                Toggle("Show reminders", isOn: $reminderMe.animation().onChange(update))
                     .alert(isPresented: $showingNotificationError) {
                         Alert(
                             title: Text("Oops"),
@@ -75,10 +79,10 @@ struct EditProjectView: View {
                         )
                     }
 
-                if remiderMe {
+                if reminderMe {
                     DatePicker(
                         "Reminder time",
-                        selection: $remiderTime.onChange(update),
+                        selection: $reminderTime.onChange(update),
                         displayedComponents: .hourAndMinute
                     )
                 }
@@ -102,6 +106,13 @@ struct EditProjectView: View {
 
         }
         .navigationTitle("Edit View")
+        .toolbar {
+            Button {
+                uploadToCloud()
+            } label: {
+                Label("Upload to iCloud", systemImage: "icloud.and.arrow.up")
+            }
+        }
         .onDisappear(perform: dataController.save)
         .alert(isPresented: $showingDeleteConfirm) {
             Alert(
@@ -112,6 +123,7 @@ struct EditProjectView: View {
                 secondaryButton: .cancel()
             )
         }
+        .sheet(isPresented: $showingSignIn, content: SignInView.init)
     }
 
     func update() {
@@ -119,18 +131,18 @@ struct EditProjectView: View {
         project.detail = detail
         project.color = color
 
-        if remiderMe {
-            project.remiderTime = remiderTime
+        if reminderMe {
+            project.reminderTime = reminderTime
 
             dataController.addReminders(for: project) { success in
                 if success == false {
-                    project.remiderTime = nil
-                    remiderMe = false
+                    project.reminderTime = nil
+                    reminderMe = false
                     showingNotificationError = true
                 }
             }
         } else {
-            project.remiderTime = nil
+            project.reminderTime = nil
             dataController.removeReminders(for: project)
         }
     }
@@ -213,6 +225,27 @@ struct EditProjectView: View {
 
         if UIApplication.shared.canOpenURL(settingsUrl) {
             UIApplication.shared.open(settingsUrl)
+        }
+    }
+
+    func uploadToCloud() {
+        if let username = username {
+            let records = project.prepareCloudRecords(owner: username)
+            let operation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
+            operation.savePolicy = .allKeys
+
+            operation.modifyRecordsResultBlock = { result in
+                switch result {
+                case .success(let success):
+                    print("success: \(success)")
+                case .failure(let error):
+                    print("Error: \(error.localizedDescription)")
+                }
+            }
+
+            CKContainer.default().publicCloudDatabase.add(operation)
+        } else {
+            showingSignIn = true
         }
     }
 }

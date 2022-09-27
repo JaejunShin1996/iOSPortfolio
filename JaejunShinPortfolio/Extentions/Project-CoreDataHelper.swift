@@ -5,7 +5,7 @@
 //  Created by Jaejun Shin on 11/8/2022.
 //
 
-import Foundation
+import CloudKit
 import SwiftUI
 
 extension Project {
@@ -39,6 +39,11 @@ extension Project {
     var projectItems: [Item] {
         items?.allObjects as? [Item] ?? []
     }
+
+    var projectCreationDate: Date {
+        creationDate ?? Date()
+    }
+
 // Sort incomplete, priority and creation date. Incomplete, high priority and last made comes first.
     var projectItemsDefaultSorted: [Item] {
         projectItems.sorted { first, second in
@@ -62,7 +67,7 @@ extension Project {
         }
     }
 
-    func projectItems(using sortOrder: Item.SortOrders) -> [Item] {
+    func projectItems(using sortOrder: Item.SortOrder) -> [Item] {
         switch sortOrder {
         case .optimised:
             return projectItemsDefaultSorted
@@ -96,5 +101,29 @@ extension Project {
         project.closed = true
 
         return project
+    }
+
+    func prepareCloudRecords(owner: String) -> [CKRecord] {
+        let parentName = objectID.uriRepresentation().absoluteString
+        let parentID = CKRecord.ID(recordName: parentName)
+        let parent = CKRecord(recordType: "Project", recordID: parentID)
+        parent["title"] = projectTitle
+        parent["detail"] = projectDetail
+        parent["owner"] = owner
+        parent["closed"] = closed
+
+        var records = projectItemsDefaultSorted.map { item -> CKRecord in
+            let childName = item.objectID.uriRepresentation().absoluteString
+            let childID = CKRecord.ID(recordName: childName)
+            let child = CKRecord(recordType: "Item", recordID: childID)
+            child["title"] = item.itemTitle
+            child["detail"] = item.itemDetail
+            child["completed"] = item.completed
+            child["project"] = CKRecord.Reference(recordID: parentID, action: .deleteSelf)
+            return child
+        }
+
+        records.append(parent)
+        return records
     }
 }

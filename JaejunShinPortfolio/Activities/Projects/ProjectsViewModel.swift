@@ -45,7 +45,7 @@ extension ProjectsView {
             }
         }
 
-        @State var sortOrder = Item.SortOrders.optimised
+        @State var sortOrder = Item.SortOrder.optimised
 
         func onDelete(_ offsets: IndexSet, from project: Project) {
             let allItems = project.projectItems(using: sortOrder)
