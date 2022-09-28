@@ -278,6 +278,7 @@
 		5201825728BC6CC1004C667E /* Activities */ = {
 			isa = PBXGroup;
 			children = (
+				52A5D98528DD52BE0079D754 /* CloudError.swift */,
 				5201825A28BC6CD0004C667E /* Home */,
 				5201825928BC6CCE004C667E /* Projects */,
 				5201825828BC6CCC004C667E /* Awards */,
@@ -347,7 +348,6 @@
 				5215C75628DAB4410064B79E /* LoadState.swift */,
 				5239F66928DC26F10051D1C2 /* SignInView.swift */,
 				52A5D98328DD52B10079D754 /* ChatMessage.swift */,
-				52A5D98528DD52BE0079D754 /* CloudError.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";

@@ -22,6 +22,8 @@ extension DataController {
             fetchRequest.predicate = NSPredicate(format: "completed = true")
             let awardCount = count(for: fetchRequest)
             return awardCount >= award.value
+        case "chat":
+            return UserDefaults.standard.integer(forKey: "chatCount") >= award.value
             // a unknown award; this should not be allowed
         default:
             // fatalError("Unknown award criterion \(award.criterion).")

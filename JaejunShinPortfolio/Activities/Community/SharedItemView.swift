@@ -18,6 +18,8 @@ struct SharedItemView: View {
     @State private var messagesLoadState = LoadState.inactive
 
     @AppStorage("username") var username: String?
+    @AppStorage("chatCount") var chatCount = 0
+
     @State private var showingSignIn = false
     @State private var newChatText = ""
 
@@ -88,7 +90,7 @@ struct SharedItemView: View {
         .alert(item: $cloudError) { error in
             Alert(
                 title: Text("There was an error."),
-                message: Text(error.message)
+                message: Text(error.localizedMessage)
             )
         }
     }
@@ -193,6 +195,7 @@ struct SharedItemView: View {
             if let error = error {
                 print(error.localizedDescription)
                 cloudError = error.getCloudKitError()
+                chatCount += 1
                 newChatText = backupChatText
             } else if let record = record {
                 let message = ChatMessage(from: record)
