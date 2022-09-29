@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSUserActivityTypes</key>
-	<array>
-		<string>com.jaejunshin.JaejunShinPortfolio.newProject</string>
-	</array>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -15,15 +11,13 @@
 			<string>com.jaejunshin.JaejunShinPortfolio</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>jaejunshitportfolio</string>
+				<string>jaejunshinportfolio</string>
 			</array>
 		</dict>
 	</array>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>UIBackgroundModes</key>
+	<key>NSUserActivityTypes</key>
 	<array>
-		<string>remote-notification</string>
+		<string>com.jaejunshin.JaejunShinPortfolio.newProject</string>
 	</array>
 	<key>UIApplicationShortcutItems</key>
 	<array>
@@ -35,6 +29,10 @@
 			<key>UIApplicationShortcutItemType</key>
 			<string>JaejunShinPortfolio://newProject</string>
 		</dict>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
 	</array>
 </dict>
 </plist>

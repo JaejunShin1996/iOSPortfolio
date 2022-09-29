@@ -19,6 +19,11 @@ struct JaejunShinPortfolioApp: App {
 
         _dataController = StateObject(wrappedValue: dataController)
         _unlockManager = StateObject(wrappedValue: unlockManager)
+
+        // Workaround for "Sign-in with Apple" not working on simulator: force a specific username
+        #if targetEnvironment(simulator)
+        UserDefaults.standard.set("TheGreatJaejun", forKey: "username")
+        #endif
     }
 
     var body: some Scene {
