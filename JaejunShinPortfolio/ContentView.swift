@@ -57,7 +57,10 @@ struct ContentView: View {
         .onContinueUserActivity(newProjectActivity, perform: createProjectFromShortcut)
         .userActivity(newProjectActivity, { activity in
             activity.title = "New Project"
+
+            #if os(iOS) || os(watchOS)
             activity.isEligibleForPrediction = true
+            #endif
         })
         .sheet(isPresented: $showingUnlockView, content: { UnlockView() })
         .onOpenURL(perform: openURL)
