@@ -20,11 +20,17 @@ struct ProjectsView: View {
     }
 
     var projectListView: some View {
-        List {
+        List(selection: $viewModel.selectedItem) {
             ForEach(viewModel.projects) { project in
                 Section(header: ProjectHeaderView(project: project)) {
                     ForEach(project.projectItems(using: viewModel.sortOrder)) { item in
                         ItemRowView(project: project, item: item)
+                            .contextMenu {
+                                Button("Delete", role: .destructive) {
+                                    viewModel.delete(item)
+                                }
+                            }
+                            .tag(item)
                     }
                     .onDelete { offsets in
                         withAnimation {
@@ -40,11 +46,17 @@ struct ProjectsView: View {
                         } label: {
                             Label("Add New Item", systemImage: "plus")
                         }
+                        .buttonStyle(ImageButtonStyle())
                     }
                 }
+                .disableCollapsing()
             }
         }
         .listStyle(InsetGroupedListStyle())
+        .onDeleteCommand {
+            guard let selectedItem = viewModel.selectedItem else { return }
+            viewModel.delete(selectedItem)
+        }
     }
 
     var addProjectToolBarItem: some ToolbarContent {
