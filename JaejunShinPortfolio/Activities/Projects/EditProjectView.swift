@@ -120,6 +120,7 @@ struct EditProjectView: View {
                 Text("Closing a project moves it from the Open to Closed tab; deleting it removes the project completely.")
             }
 
+            MacOnlySpacer()
         }
         .onAppear(perform: updateCloudStatus)
         .onDisappear(perform: dataController.save)
@@ -147,6 +148,7 @@ struct EditProjectView: View {
             )
         }
         .sheet(isPresented: $showingSignIn, content: SignInView.init)
+        .macOnlyPadding()
     }
 
     func update() {

@@ -5,6 +5,7 @@
 //  Created by Jaejun Shin on 29/9/2022.
 //
 
+import CloudKit
 import SwiftUI
 
 typealias InsetGroupedListStyle = DefaultListStyle
@@ -23,7 +24,7 @@ struct StackNavigationView<Content: View>: View {
     }
 }
 
-extension Section where Parent : View, Content : View, Footer : View {
+extension Section where Parent: View, Content: View, Footer: View {
     func disableCollapsing() -> some View {
         self.collapsible(false)
     }
@@ -32,5 +33,11 @@ extension Section where Parent : View, Content : View, Footer : View {
 extension View {
     func macOnlyPadding() -> some View {
         self.padding()
+    }
+}
+
+extension CKContainer {
+    static func `default`() -> CKContainer {
+        return CKContainer(identifier: "iCloud.com.jaejunshin.JaejunShinPortfolio")
     }
 }

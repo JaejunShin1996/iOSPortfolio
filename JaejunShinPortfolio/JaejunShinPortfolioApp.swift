@@ -12,7 +12,7 @@ struct JaejunShinPortfolioApp: App {
     #if os(iOS)
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     #endif
-    
+
     @StateObject var dataController: DataController
     @StateObject var unlockManager: UnlockManager
 

@@ -17,7 +17,6 @@
 		52018FEA28E556A200F79E43 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526E56CF28A3A08200EC3F45 /* DataController.swift */; };
 		52018FEB28E556A200F79E43 /* DataController-Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526E13DC28D438D90052BE58 /* DataController-Reminder.swift */; };
 		52018FEC28E556AE00F79E43 /* ProjectSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525BC8D728B72B950022E661 /* ProjectSummaryView.swift */; };
-		52018FED28E556AE00F79E43 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D5549B28A3B685000C26A9 /* HomeView.swift */; };
 		52018FEE28E556AE00F79E43 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525BC8D528B729AA0022E661 /* ItemListView.swift */; };
 		52018FEF28E556AE00F79E43 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5252883428C5B7DA00061D9E /* HomeViewModel.swift */; };
 		52018FF028E556B200F79E43 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D5549D28A3B6BC000C26A9 /* ProjectsView.swift */; };
@@ -47,16 +46,17 @@
 		5201900A28E557D300F79E43 /* PlatformAdjustments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5201900928E557D300F79E43 /* PlatformAdjustments.swift */; };
 		5201900C28E5583200F79E43 /* PurchaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DCA4928D032E100DDF8A5 /* PurchaseButton.swift */; };
 		5201900D28E5583200F79E43 /* UnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DCA4D28D03E7C00DDF8A5 /* UnlockView.swift */; };
-		5201900E28E5583900F79E43 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521188A628AA063100981F22 /* EditProjectView.swift */; };
 		5201900F28E5583900F79E43 /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2861728A8E39F00F2474C /* ItemRowView.swift */; };
 		5201901028E5583900F79E43 /* ProjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521188A228A9FF2400981F22 /* ProjectHeaderView.swift */; };
 		5201901128E5583900F79E43 /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521758BC28C3205A005B526D /* ProjectsViewModel.swift */; };
 		5201901228E5583900F79E43 /* SelectSomethingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E42E5428ACC223003EC564 /* SelectSomethingView.swift */; };
-		5201901328E5583900F79E43 /* EditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2861528A8DD7D00F2474C /* EditItemView.swift */; };
 		5201901528E5597B00F79E43 /* PlatformAdjustments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5201901428E5597B00F79E43 /* PlatformAdjustments.swift */; };
 		5201901728E55A1E00F79E43 /* Color-Addtions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5201901628E55A1E00F79E43 /* Color-Addtions.swift */; };
 		5201901828E55B4E00F79E43 /* UnlockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52764FA028CEFDC900A00B42 /* UnlockManager.swift */; };
 		5201901928E55B9B00F79E43 /* CloudError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A5D98528DD52BE0079D754 /* CloudError.swift */; };
+		5209C14F28E6AE7700C01D02 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209C14E28E6AE7700C01D02 /* HomeView.swift */; };
+		5209C15128E6B6C400C01D02 /* EditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2861528A8DD7D00F2474C /* EditItemView.swift */; };
+		5209C15328E6B6D500C01D02 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521188A628AA063100981F22 /* EditProjectView.swift */; };
 		521188A328A9FF2400981F22 /* ProjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521188A228A9FF2400981F22 /* ProjectHeaderView.swift */; };
 		521188A528AA030000981F22 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521188A428AA030000981F22 /* Colors.xcassets */; };
 		521188A728AA063100981F22 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521188A628AA063100981F22 /* EditProjectView.swift */; };
@@ -182,6 +182,7 @@
 		5201900928E557D300F79E43 /* PlatformAdjustments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformAdjustments.swift; sourceTree = "<group>"; };
 		5201901428E5597B00F79E43 /* PlatformAdjustments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformAdjustments.swift; sourceTree = "<group>"; };
 		5201901628E55A1E00F79E43 /* Color-Addtions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Addtions.swift"; sourceTree = "<group>"; };
+		5209C14E28E6AE7700C01D02 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		520EA4E128E16E4D00132381 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		521188A228A9FF2400981F22 /* ProjectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHeaderView.swift; sourceTree = "<group>"; };
 		521188A428AA030000981F22 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -403,11 +404,12 @@
 		52018FD928E554B200F79E43 /* JaejunShinPortfolioMac */ = {
 			isa = PBXGroup;
 			children = (
+				5209C14E28E6AE7700C01D02 /* HomeView.swift */,
+				5201900928E557D300F79E43 /* PlatformAdjustments.swift */,
+				5201901628E55A1E00F79E43 /* Color-Addtions.swift */,
 				52018FDE28E554B400F79E43 /* Assets.xcassets */,
 				52018FE328E554B400F79E43 /* JaejunShinPortfolioMac.entitlements */,
 				52018FE028E554B400F79E43 /* Preview Content */,
-				5201900928E557D300F79E43 /* PlatformAdjustments.swift */,
-				5201901628E55A1E00F79E43 /* Color-Addtions.swift */,
 			);
 			path = JaejunShinPortfolioMac;
 			sourceTree = "<group>";
@@ -796,17 +798,19 @@
 				52018FE928E556A200F79E43 /* DataController-StoreKit.swift in Sources */,
 				52018FF128E556BC00F79E43 /* AwardsView.swift in Sources */,
 				5201900628E5574F00F79E43 /* LoadState.swift in Sources */,
+				5209C15328E6B6D500C01D02 /* EditProjectView.swift in Sources */,
 				5201900728E5574F00F79E43 /* SignInView.swift in Sources */,
 				5201900428E5574F00F79E43 /* SharedProjectView.swift in Sources */,
 				5201900828E5575800F79E43 /* ProductView.swift in Sources */,
 				52018FEF28E556AE00F79E43 /* HomeViewModel.swift in Sources */,
+				5209C14F28E6AE7700C01D02 /* HomeView.swift in Sources */,
 				52018FFF28E5574900F79E43 /* Binding-OnChange.swift in Sources */,
 				5201900128E5574F00F79E43 /* SharedProject.swift in Sources */,
-				52018FED28E556AE00F79E43 /* HomeView.swift in Sources */,
 				5201900A28E557D300F79E43 /* PlatformAdjustments.swift in Sources */,
 				52018FEC28E556AE00F79E43 /* ProjectSummaryView.swift in Sources */,
 				52018FEE28E556AE00F79E43 /* ItemListView.swift in Sources */,
 				52018FF928E5574900F79E43 /* Project-CoreDataHelper.swift in Sources */,
+				5209C15128E6B6C400C01D02 /* EditItemView.swift in Sources */,
 				5201901828E55B4E00F79E43 /* UnlockManager.swift in Sources */,
 				5201900D28E5583200F79E43 /* UnlockView.swift in Sources */,
 				5201901028E5583900F79E43 /* ProjectHeaderView.swift in Sources */,
@@ -817,12 +821,10 @@
 				52018FFE28E5574900F79E43 /* Item-CoreDataHelper.swift in Sources */,
 				5201901228E5583900F79E43 /* SelectSomethingView.swift in Sources */,
 				5201900028E5574900F79E43 /* Bundle-Decodable.swift in Sources */,
-				5201900E28E5583900F79E43 /* EditProjectView.swift in Sources */,
 				52018FFA28E5574900F79E43 /* Sequence-Sorting.swift in Sources */,
 				5201900528E5574F00F79E43 /* SharedItem.swift in Sources */,
 				52018FFC28E5574900F79E43 /* Error-CloudKitMessages.swift in Sources */,
 				52018FEB28E556A200F79E43 /* DataController-Reminder.swift in Sources */,
-				5201901328E5583900F79E43 /* EditItemView.swift in Sources */,
 				52018FE828E556A200F79E43 /* DataController-Award.swift in Sources */,
 				5201900C28E5583200F79E43 /* PurchaseButton.swift in Sources */,
 				5201901728E55A1E00F79E43 /* Color-Addtions.swift in Sources */,
