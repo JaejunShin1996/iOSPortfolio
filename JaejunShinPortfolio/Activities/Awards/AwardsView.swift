@@ -20,7 +20,7 @@ struct AwardsView: View {
     }
 
     var body: some View {
-        NavigationView {
+        StackNavigationView {
             ScrollView {
                 LazyVGrid(columns: colums) {
                     ForEach(Award.allAwards, content: awardButton)
@@ -49,6 +49,7 @@ struct AwardsView: View {
         .accessibilityLabel(dataController.hasEarned(award: award) ?
                             "Unlocked: \(award.name)" : "Locked")
         .accessibilityHint("\(award.description)")
+        .buttonStyle(ImageButtonStyle())
     }
 
     func getAwardAlert() -> Alert {
