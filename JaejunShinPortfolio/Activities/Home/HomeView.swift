@@ -11,6 +11,7 @@ import SwiftUI
 
 struct HomeView: View {
     static let tag: String? = "Home"
+
     @StateObject var viewModel: ViewModel
 
     init(dataController: DataController) {

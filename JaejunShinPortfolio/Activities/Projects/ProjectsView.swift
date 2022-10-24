@@ -20,7 +20,7 @@ struct ProjectsView: View {
     }
 
     var projectListView: some View {
-        List(selection: $viewModel.selectedItem) {
+        List {
             ForEach(viewModel.projects) { project in
                 Section(header: ProjectHeaderView(project: project)) {
                     ForEach(project.projectItems(using: viewModel.sortOrder)) { item in

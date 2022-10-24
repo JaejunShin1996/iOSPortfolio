@@ -341,7 +341,6 @@
 		5201825728BC6CC1004C667E /* Activities */ = {
 			isa = PBXGroup;
 			children = (
-				52A5D98528DD52BE0079D754 /* CloudError.swift */,
 				5201825A28BC6CD0004C667E /* Home */,
 				5201825928BC6CCE004C667E /* Projects */,
 				5201825828BC6CCC004C667E /* Awards */,
@@ -364,9 +363,9 @@
 		5201825928BC6CCE004C667E /* Projects */ = {
 			isa = PBXGroup;
 			children = (
+				52E42E5428ACC223003EC564 /* SelectSomethingView.swift */,
 				52D5549D28A3B6BC000C26A9 /* ProjectsView.swift */,
 				521758BC28C3205A005B526D /* ProjectsViewModel.swift */,
-				52E42E5428ACC223003EC564 /* SelectSomethingView.swift */,
 				521188A228A9FF2400981F22 /* ProjectHeaderView.swift */,
 				52E2861728A8E39F00F2474C /* ItemRowView.swift */,
 				521188A628AA063100981F22 /* EditProjectView.swift */,
@@ -432,6 +431,7 @@
 				5215C75628DAB4410064B79E /* LoadState.swift */,
 				5239F66928DC26F10051D1C2 /* SignInView.swift */,
 				52A5D98328DD52B10079D754 /* ChatMessage.swift */,
+				52A5D98528DD52BE0079D754 /* CloudError.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
